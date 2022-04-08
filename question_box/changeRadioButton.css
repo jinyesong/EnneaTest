@@ -1,10 +1,10 @@
 .questionbox {
     width: 100%;
-    padding: 25px;
+    padding-top: 25px;
     text-align: center;
 }
 .select {
-    width:100%;
+    width:80%;
     align-items: center;
     text-align: center;
     margin: 0 auto;
@@ -19,7 +19,15 @@
     border-radius: 50%;
     display: inline-block;
 }
-
+.headline {
+    text-align: center;
+}
+#back {
+    height: 100%;
+    background-image: url("../image/background_img.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
 .check1, .check5{
     height: 70px;
     width: 70px;
