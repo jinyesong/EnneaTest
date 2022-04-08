@@ -1,13 +1,17 @@
-.questionbox {
+.headline { /* 맨 위의 나는.. 부분 */
+    text-align: center;
+    font-size: 15px;
+}
+.questionbox { /* (문제 + 라디오박스 + 라디오 밑의 글씨) 의 div */
     width: 100%;
-    padding-top: 25px;
+    padding-top: 10px;
     text-align: center;
 }
+.questionSTR {
+    font-size: 18px;
+}
 .select {
-    width:80%;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
+    font-size:13px;
 }
 .select input[type=radio], .select input[type=radio]:checked{
     appearance: none;
@@ -15,30 +19,34 @@
     border: 1px solid #333;
     line-height: 24px;
     font-weight:bold;
-    font-size:13px;
     border-radius: 50%;
     display: inline-block;
 }
-.headline {
-    text-align: center;
+#outer {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 #back {
+    /* margin: auto; */
     height: 100%;
     background-image: url("../image/background_img.jpg");
     background-repeat: no-repeat;
-    background-position: 50% 0%;
+    background-position: 50%;
 }
 .check1, .check5{
-    height: 70px;
-    width: 70px;
-}
-.check4, .check2{
     height: 60px;
     width: 60px;
 }
-.check3{
+.check4, .check2{
     height: 50px;
     width: 50px;
+}
+.check3{
+    height: 40px;
+    width: 40px;
 }
 .select input[type=radio]{
     background-color: #fff;
@@ -47,4 +55,44 @@
 .select input[type=radio]:checked{
     background-color: #333;
     border: 2px solid #333;
+}
+
+@media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
+    .headline { /* 맨 위의 나는.. 부분 */
+        text-align: center;
+        font-size: 25px;
+    }
+    .questionbox { /* (문제 + 라디오박스 + 라디오 밑의 글씨) 의 div */
+        width: 100%;
+        padding-top: 15px;
+        text-align: center;
+    }
+    .questionSTR {
+        font-size: 23px;
+    }
+    .select {
+    font-size:15px;
+    }
+    .select input[type=radio], .select input[type=radio]:checked{
+        appearance: none;
+        cursor: pointer;
+        border: 1px solid #333;
+        line-height: 24px;
+        font-weight:bold;
+        font-size:13px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .check1, .check5{
+        height: 70px;
+        width: 70px;
+    }
+    .check4, .check2{
+        height: 60px;
+        width: 60px;
+    }
+    .check3{
+        height: 50px;
+        width: 50px;
+    }
 }
