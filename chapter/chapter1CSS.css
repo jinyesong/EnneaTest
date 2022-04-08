@@ -1,0 +1,18 @@
+#back {
+    height: 1280px;
+    width: 986px;
+    background-image: url("../image/background_img.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    display: inline-block;
+}
+
+#outer {
+    text-align: center;
+}
+
+#inner {
+    padding-top: 100%;
+    padding-right: 10%;
+    height: 100%;
+}
