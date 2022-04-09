@@ -2,18 +2,25 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="startPage.css">
     <title>연애비책</title>
 </head>
 <body>
     <div id="page_container">
         <img id="logoImg" src="KSCA.jpg" alt="logo"><br>
-        <img id="mainImg" src="mainImg.jpg">
-        <h5>당신에게만 공개하는</h5>
-        <h1>연.애.비.책</h1>
-        <button id="startBtn" onclick="location.href='../name/name.html' ">펼쳐보기</button>
-        <h4>참여자 수</h4>
-        <h2>2,164,776</h2>
+        <img id="mainImg" src="startImg.jpg">
+        <p id="text1" class="font">당신에게만 공개하는</p>
+        <p id="text2" class="font">연.애.비.책</p>
+        <div id="openBtn">
+            <a href="../name/name.html">
+                <img src="openBtn.png">
+            </a>
+        </div>
+        <p id="text3" class="font">참여자 수</p>
+        <p id="text4" class="font"><label id="count">2,164,776</label> 명</p>
     </div>
 </body>
 </html>

@@ -2,8 +2,10 @@ body{
     width: 100%;
     height: 100%;
     margin: 0;
+    background-color: #314580;
 }
 #page_container{
+    background-color: white;
     margin: 10px auto;
     /* border: 1px solid black; */
     text-align: center;
@@ -11,13 +13,40 @@ body{
     height: auto;
 }
 #logoImg{
-    margin-top: 30px;
-    max-width: 20%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-width: 30%;
     height: auto;
 }
 #mainImg{
     height: auto;
     max-width: 80%;
+}
+#openBtn img{
+    width: 250px;
+    height: auto;
+}
+.font {
+    font-family: 'Jua', sans-serif;
+}
+#text1{
+    font-size: 20px;
+}
+#text2{
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#text3{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+#text4{
+    font-size: 15px;
+}
+#count{
+    color: #314580;
+    font-size: 25px;
 }
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
@@ -34,11 +63,6 @@ body{
     }
     h1{
         font-size: 70px;
-    }
-    button{
-        width: 200px;
-        height: 80px;
-        font-size: 40px;
     }
     h4{
         font-size: 50px;
