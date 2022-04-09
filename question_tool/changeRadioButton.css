@@ -1,0 +1,42 @@
+.questionbox {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+}
+.select {
+    width:100%;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.select input[type=radio], .select input[type=radio]:checked{
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid #333;
+    line-height: 24px;
+    font-weight:bold;
+    font-size:13px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.check1, .check5{
+    height: 70px;
+    width: 70px;
+}
+.check4, .check2{
+    height: 60px;
+    width: 60px;
+}
+.check3{
+    height: 50px;
+    width: 50px;
+}
+.select input[type=radio]{
+    background-color: #fff;
+    border: 2px solid #333;
+}
+.select input[type=radio]:checked{
+    background-color: #333;
+    border: 2px solid #333;
+}
