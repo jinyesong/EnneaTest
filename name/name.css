@@ -1,35 +1,67 @@
-body{
-    width: 100%;
-    height: 100%;
-    background-color: #314580; /*#253563*/
+body {
+    background-color: #314580;
+    height: 700px; /* 왜 100%하면 안나올까 고쳐야함 */
 }
-#imgContainer{
-    margin: 0 auto;
-    width: 38%;
-    height: auto;
+#back {
+    height: 100%;
+    background-image: url("../image/background_img.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#prologuePage{
+    height: 100%;
+    background-size: contain;
+    background-image: url("prologue.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    display: none;
     text-align: center;
 }
-#book_background{
-    width: 100%;
+#prologuePage a{
+    position: absolute;
+    top: 80%;
+}
+#prologuePage img{
+    width: 100px;
     height: auto;
 }
-#textContainer{
+#inner {
     position: absolute;
-    top: 30%;
-    left: 39%;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
-#nameBox{
+.questionText{
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+}
+.nameBox{
     font-family: 'Jua', sans-serif;
     font-size: 35px;
-    width: 300px;
+    width: 150px;
     height: 40px;
     text-align: center;
+    background-color: #E8E7D5;
+    color: white;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 5px solid black;
 }
-#questionText{
-    font-family: 'Jua', sans-serif;
+#nextBtn{
+    margin-top: 20%;
+    cursor: pointer;
 }
+#nextBtn img{
+    width: 100px;
+    height: auto;
+}
+
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
-    #imgContainer{
+    /* #imgContainer{
         margin: 120px 0;
         width: 100%;
         height: auto;
@@ -49,5 +81,5 @@ body{
         width: 600px;
         height:80px;
         text-align: center;
-    }
+    } */
 }

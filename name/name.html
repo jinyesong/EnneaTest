@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
     <link rel="stylesheet" href="name.css">
-    <title>당신의 이름은?</title>
+    <title>프롤로그</title>
 </head>
 <body>
-    <div id="imgContainer">
-        <img id="book_background" src="../book_background.jpg" alt="background">
-        <div id="textContainer">
-            <h1 id="questionText">당신의 이름은?</h1>
-            <input id="nameBox" type="text">
+    <div id="back">
+        <div id="inner">
+            <div class="inputContainer">
+                <p class="questionText">당신의 이름은?</p>
+                <input class="nameBox" type="text">
+            </div>
+            <div id="nextBtn">
+                <img class="imgbutton" src="../image/nextbutton.png">
+            </div>
         </div>
-        <a href="../answer1/answer1.html">넘기기</a> <!-- data-transition="flip" -->
     </div>
+    <div id="prologuePage">
+        <a href="../chapter/chapter1.html">
+            <img class="imgbutton" src="../image/nextbutton.png">
+        </a>
+    </div>
+    <script src="name.js"></script>
 </body>
 </html>
