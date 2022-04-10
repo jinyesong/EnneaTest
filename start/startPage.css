@@ -42,11 +42,11 @@ body{
     margin-bottom: 0;
 }
 #text4{
-    font-size: 15px;
+    font-size: 20px;
 }
 #count{
     color: #314580;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
