@@ -1,6 +1,9 @@
+html{
+    height: 100%;
+}
 body {
     background-color: #314580;
-    height: 700px; /* 왜 100%하면 안나올까 고쳐야함 */
+    height: 100%;
 }
 #back {
     height: 100%;
@@ -18,9 +21,9 @@ body {
     display: none;
     text-align: center;
 }
-#prologuePage a{
-    position: absolute;
-    top: 80%;
+#chapterGoBtn{
+    display: inline-block;
+    margin-top: 55%; /* 이거 방식 다르게 하면 좋을듯1 */
 }
 #prologuePage img{
     width: 100px;
@@ -52,7 +55,7 @@ body {
     border-bottom: 5px solid black;
 }
 #nextBtn{
-    margin-top: 20%;
+    margin-top: 20%; /* 이거 방식 다르게 하면 좋을듯2 */
     cursor: pointer;
 }
 #nextBtn img{
