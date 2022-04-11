@@ -15,7 +15,7 @@ body {
 #prologuePage{
     height: 100%;
     background-size: contain;
-    background-image: url("prologue.png");
+    background-image: url("../image/prologue.png");
     background-repeat: no-repeat;
     background-position: 50%;
     display: none;
