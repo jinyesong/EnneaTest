@@ -46,6 +46,9 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+#inner_2, #inner_3, #inner_4, #inner_5{
+    display: none;
+}
 .headline { /* 맨 위의 나는.. 부분 */
     text-align: center;
     font-size: 14px;
