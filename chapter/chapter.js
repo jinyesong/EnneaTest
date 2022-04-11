@@ -10,6 +10,7 @@ document.getElementById("nextBtn").addEventListener("click", function(){
 let innerPage = 1;
 let isTrue = [0,0,0,0,0];
 let questionNum = 7; //일단 7이상으로 초기화
+let chapterNum = 1;
 document.getElementById("back").addEventListener("click", function(e){
     if(e.target.tagName == "INPUT"){ //라디오버튼이 클릭되었을 때
         let clicked = e.target.name.substr(-1);
@@ -17,8 +18,13 @@ document.getElementById("back").addEventListener("click", function(e){
         isTrue[clicked-1] = score;
 
         if(!isTrue.includes(0)){ //라디오버튼이 모두 체크되었을 때
+            //세션스토리지에 저장
+            for(let i=0; i<questionNum; i++){
+                let QNum = innerPage*5 + i + 1;
+                checkEnnea_Nsum(chapterNum, QNum, isTrue[i]);
+            }
             if(questionNum < 7){ //마지막 inner일때
-                let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
+                chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
                 if(chapterNum == 3){
                     //결과페이지로 이동
                 }
@@ -34,3 +40,16 @@ document.getElementById("back").addEventListener("click", function(e){
         }
     }
 })
+
+chapter_enneaNum = {
+    ch1: [2, 3, 3, 3, 3, 3, 6, 5, 7, 7, 5, 7, 6, 5, 6, 6, 1, 9, 8, 9, 9, 9, 1],
+    ch2: [3, 2, 4, 2, 3, 2, 2, 3, 3, 2, 2, 5, 7, 6, 5, 6, 7, 7, 1, 9, 8, 8, 8, 8, 8, 1, 8],
+    ch3: [4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 7, 6, 5, 6, 5, 7, 5, 6, 7, 5, 8, 9, 8, 9, 1, 1, 1, 1, 9, 1, 9]
+}
+
+function checkEnnea_Nsum(chapter, question_num, val) {
+    if(chapter == "ch1") {
+        var before_val = sessionStorage.getItem(ch1[question_num-1])
+        sessionStorage.setItem(ch1[question_num-1], before_val+val)
+    }
+}
