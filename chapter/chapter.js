@@ -17,19 +17,20 @@ document.getElementById("back").addEventListener("click", function(e){
         isTrue[clicked-1] = score;
 
         if(!isTrue.includes(0)){ //라디오버튼이 모두 체크되었을 때
-            if(questionNum < 7){
-                location.href = "chapter2.html";
+            if(questionNum < 7){ //마지막 inner일때
+                let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
+                if(chapterNum == 3){
+                    //결과페이지로 이동
+                }
+                chapterNum++;
+                location.href = "chapter" + chapterNum++ + ".html";
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
             innerPage++;
             //다음 inner_(num)의 question수 세기
             questionNum = document.getElementById("inner_"+innerPage).childElementCount;
-            console.log(questionNum-2)
             isTrue = new Array(questionNum-2).fill(0); //배열 초기화 왜그런지 모르겠지만 -2해줘야 맞음
             document.getElementById("inner_"+innerPage).style.display = "block";
         }
     }
 })
-
-// 한 페이지에 5문제 이하일 때
-// 마지막 문제는 페이지 이동해야함
