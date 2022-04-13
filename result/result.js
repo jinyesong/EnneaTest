@@ -13,3 +13,10 @@ for(let i=1; i<10; i++){
 const resultImg = document.createElement("img");
 resultImg.src = `../image/result${resultEnnea}.png`;
 document.getElementById("resultImg").appendChild(resultImg);
+
+//DB저장(name, date, ennea_result)
+
+//다시하기 버튼
+document.getElementById("againBtn").addEventListener("click", function(){
+    sessionStorage.clear();
+})
