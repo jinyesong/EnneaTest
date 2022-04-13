@@ -10,7 +10,7 @@ document.getElementById("nextBtn").addEventListener("click", function(){
 let innerPage = 1;
 let isTrue = [0,0,0,0,0];
 let questionNum = 7; //일단 7이상으로 초기화
-let chapterNum = 1;
+let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
 document.getElementById("back").addEventListener("click", function(e){
     if(e.target.tagName == "INPUT"){ //라디오버튼이 클릭되었을 때
         let clicked = e.target.name.substr(-1);
@@ -24,17 +24,20 @@ document.getElementById("back").addEventListener("click", function(e){
                 checkEnnea_Nsum(chapterNum, QNum, isTrue[i]);
             }
             if(questionNum < 7){ //마지막 inner일때
-                chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
                 if(chapterNum == 3){
                     //결과페이지로 이동
+                    location.href = "../result/result.html";
                 }
-                chapterNum++;
-                location.href = "chapter" + chapterNum++ + ".html";
+                else{
+                    chapterNum++;
+                    location.href = "chapter" + chapterNum + ".html";
+                }
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
             innerPage++;
             //다음 inner_(num)의 question수 세기
             questionNum = document.getElementById("inner_"+innerPage).childElementCount;
+            console.log(questionNum)
             isTrue = new Array(questionNum-2).fill(0); //배열 초기화 왜그런지 모르겠지만 -2해줘야 맞음
             document.getElementById("inner_"+innerPage).style.display = "block";
         }
