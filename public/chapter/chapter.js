@@ -37,7 +37,6 @@ document.getElementById("back").addEventListener("click", function(e){
             innerPage++;
             //다음 inner_(num)의 question수 세기
             questionNum = document.getElementById("inner_"+innerPage).childElementCount;
-            console.log(questionNum)
             isTrue = new Array(questionNum-2).fill(0); //배열 초기화 왜그런지 모르겠지만 -2해줘야 맞음
             document.getElementById("inner_"+innerPage).style.display = "block";
         }

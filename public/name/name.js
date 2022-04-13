@@ -4,3 +4,4 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back").style.display = "none";
     document.getElementById("prologuePage").style.display = "block";
 });
+
