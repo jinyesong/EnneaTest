@@ -23,8 +23,10 @@ body{
 }
 #nextBtn{
     display: inline-block;
-    margin-top: 40%;
     cursor: pointer;
+    position: relative;
+    top: 80%;
+    left: -2%;
 }
 #nextBtn img{
     width: 100px;
