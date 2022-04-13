@@ -1,0 +1,15 @@
+body{
+    width: 100%;
+    background-color: #314580;
+    text-align: center;
+}
+#resultImg{
+    display: inline;
+}
+#resultImg img{
+    width: 50%;
+    height: auto;
+}
+#kakaoShareBtn{
+    display: inline-block;
+}
