@@ -38,13 +38,11 @@ let data = {
     8: EnneaArr[7],
     9: EnneaArr[8]
 }
-// db.collection("customer").doc(sessionStorage.getItem("name")).set(data).then((result) => {
-//     console.log("디비 저장!");
-//     resolve();
-// }).catch((err) => {
-//     console.log("저장 실패" + err);
-//     reject("Database error");
-// });
+db.collection("User").doc(sessionStorage.getItem("name")).set(data).then((result) => {
+    console.log("디비 저장!");
+}).catch((err) => {
+    console.log("저장 실패" + err);
+});
 
 //다시하기 버튼
 document.getElementById("againBtn").addEventListener("click", function(){

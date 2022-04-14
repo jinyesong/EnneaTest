@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="search.css">
+    <title>조회</title>
+</head>
+<body>
+    <input type="date"> ~ <input type="date"><br>
+    <div id="container">
+        <input id="nameSearchBox" type="text">
+        <button id="searchBtn"><span class="material-icons md-18">search</span></button>
+    </div>
+    <table id="enneaTable">
+        <tr>
+            <th>시간</th>
+            <th>이름</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+        </tr>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="../__/firebase/8.6.5/firebase-app.js"></script>
+    <script src="../__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    </script>
+    <script src="search.js"></script>
+</body>
+</html>
