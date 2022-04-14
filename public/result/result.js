@@ -28,15 +28,15 @@ const db = firebase.firestore();
 
 let data = {
     time : new Date(),
-    1: EnneaArr[0],
-    2: EnneaArr[1],
-    3: EnneaArr[2],
-    4: EnneaArr[3],
-    5: EnneaArr[4],
-    6: EnneaArr[5],
-    7: EnneaArr[6],
-    8: EnneaArr[7],
-    9: EnneaArr[8]
+    one: EnneaArr[0],
+    two: EnneaArr[1],
+    three: EnneaArr[2],
+    four: EnneaArr[3],
+    five: EnneaArr[4],
+    six: EnneaArr[5],
+    seven: EnneaArr[6],
+    eight: EnneaArr[7],
+    nine: EnneaArr[8]
 }
 db.collection("User").doc(sessionStorage.getItem("name")).set(data).then((result) => {
     console.log("디비 저장!");
