@@ -27,6 +27,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 let data = {
+    name: sessionStorage.getItem("name"),
     time : new Date(),
     one: EnneaArr[0],
     two: EnneaArr[1],
@@ -38,7 +39,7 @@ let data = {
     eight: EnneaArr[7],
     nine: EnneaArr[8]
 }
-db.collection("User").doc(sessionStorage.getItem("name")).set(data).then((result) => {
+db.collection("User").add(data).then((result) => {
     console.log("디비 저장!");
 }).catch((err) => {
     console.log("저장 실패" + err);
