@@ -13,7 +13,13 @@ const db = firebase.firestore();
 db.collection("User").get().then((snapshot)=>{
     snapshot.forEach((doc)=>{
         let arr = new Array(11);
-        arr[0] = new Date(doc.data().time*1000);
+        let date = new Date(doc.data().time*1000);
+        let year = Number(date.getFullYear()-1969); //왜그런진 모르겠는데 년도가 3991로 나옴
+        let month = ("0" + Number(date.getMonth()+1)).slice(-2);
+        let day = ("0" + date.getDate()).slice(-2);
+        let hour = ("0" + date.getHours()).slice(-2);
+        let minute = ("0" + date.getMinutes()).slice(-2);
+        arr[0] = year + "-" + month + "-" + day + " " + hour + ":" + minute;
         arr[1] = doc.data().name;
         arr[2] = doc.data().one;
         arr[3] = doc.data().two;
@@ -34,3 +40,28 @@ db.collection("User").get().then((snapshot)=>{
         document.getElementById("tableBody").appendChild(TR);
     })
 })
+
+//검색 기능
+document.getElementById("searchBtn").addEventListener("click", function(){
+    let searchDate = document.getElementById("dateSearchBox").value;
+    let searchName = document.getElementById("nameSearchBox").value;
+    let tbodyRow = document.getElementById("tableBody").getElementsByTagName("tr");
+    if(searchDate === "" && searchName !== ""){ //이름으로만 검색
+        // for(let i=0; i<tbodyRow.length; i++){
+        //     let td = tbodyRow[i].childNodes[1];
+        //     if(td !== searchName){
+        //         $("tbody tr").eq(i).remove();
+        //         i--;
+        //     }
+        // }
+    }
+    else if(searchName === "" && searchDate !== ""){ //날짜로만 검색
+        
+    }
+    else if(searchName !== "" && searchDate !== ""){ //둘다 검색
+        
+    }
+    else{
+        alert("날짜 혹은 이름을 입력해주세요.")
+    }
+});

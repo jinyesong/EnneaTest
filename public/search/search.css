@@ -6,8 +6,7 @@ body{
     text-align: center;
 }
 #nameSearchBox{
-    height: 25px;
-    width: 200px;
+    width: 100px;
 }
 #searchBtn{
     margin-top: 5px;
