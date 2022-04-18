@@ -6,11 +6,12 @@ body{
 }
 #page_container{
     background-color: white;
-    margin: 10px auto;
-    /* border: 1px solid black; */
     text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 500px;
-    height: auto;
 }
 #logoImg{
     margin-top: 10px;
@@ -24,7 +25,6 @@ body{
 }
 #openBtn img{
     width: 180px;
-    height: auto;
 }
 .font {
     font-family: 'Jua', sans-serif;
@@ -51,23 +51,31 @@ body{
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
     #page_container{
-        margin-left: auto;
-        margin-right: auto;
-        /* border: 1px solid black; */
+        background-color: white;
         text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 100%;
-        height: auto;
     }
-    h5{
-        font-size: 30px;
+    #openBtn img{
+        width: 300px;
     }
-    h1{
-        font-size: 70px;
+    #text1{
+        font-size: 47px;
     }
-    h4{
-        font-size: 50px;
+    #text2{
+        font-size: 100px;
     }
-    h2{
-        font-size: 60px;
+    #text3{
+        font-size: 55px;
+    }
+    #text4{
+        font-size: 55px;
+    }
+    #count{
+        color: #314580;
+        font-size: 55px;
     }
 }

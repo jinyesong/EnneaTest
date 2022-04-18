@@ -12,4 +12,5 @@ body{
 }
 #kakaoShareBtn{
     display: inline-block;
+    cursor: pointer;
 }
