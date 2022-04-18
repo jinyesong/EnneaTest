@@ -4,13 +4,22 @@ html{
 body {
     background-color: #314580;
     height: 100%;
+    /* align-items: center; */
+    justify-content: center;
+    align-content: center;
+}
+#background_img {
+    margin: auto;
+    height: 100%;
 }
 #back {
+    display: flex;
+    text-align: center;
     height: 100%;
-    background-image: url("../image/background_img.jpg");
+    left: -5%;
+    /* background-image: url("../image/background_img.jpg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background-repeat: no-repeat; */
 }
 #prologuePage{
     height: 100%;
@@ -23,28 +32,34 @@ body {
 }
 #chapterGoBtn{
     display: inline-block;
-    margin-top: 40%; /* 이거 방식 다르게 하면 좋을듯1 */
+    margin-top: 4vw;
+     /* 이거 방식 다르게 하면 좋을듯1 */
+}
+p{
+    margin: 0px;
 }
 #prologuePage img{
     width: 100px;
     height: auto;
 }
 #inner {
+    margin: auto;
     position: absolute;
     width: 100%;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    top: 25vh;
+    transform: translate(-35px,-50%);
     text-align: center;
 }
 .questionText{
     font-family: 'Jua', sans-serif;
     font-size: 40px;
+    transform: translateY(5vh);
 }
 #nameBox{
     font-family: 'Jua', sans-serif;
     font-size: 35px;
-    width: 150px;
+    transform: translateY(60px);
+    width: 15vw;
     height: 40px;
     text-align: center;
     background-color: #E8E7D5;
@@ -55,7 +70,9 @@ body {
     border-bottom: 5px solid black;
 }
 #nextBtn{
-    margin-top: 20%; /* 이거 방식 다르게 하면 좋을듯2 */
+    /* margin-top: 2vw; */
+     /* 이거 방식 다르게 하면 좋을듯2 */
+    transform: translateY(500px);
     cursor: pointer;
 }
 #nextBtn img{
@@ -64,25 +81,47 @@ body {
 }
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
+    #background_img {
+        margin: auto;
+        width: 100%;
+        height: auto;
+    }
+    #inner {
+        position: absolute;
+        top: 42%;
+        transform: translate(-3.5vw, -25vw);
+    }
     /* #imgContainer{
         margin: 120px 0;
         width: 100%;
         height: auto;
-    }
-    #textContainer{
+    } */
+    /* #textContainer{
         position: absolute;
         top: 30%;
         left: 17%;
+    } */
+
+    #nextBtn{
+        /* margin-top: 2vw; */
+         /* 이거 방식 다르게 하면 좋을듯2 */
+        transform: translateY(50vw);
+        cursor: pointer;
     }
-    #questionText{
+    .questionText{
         font-family: 'Jua', sans-serif;
-        font-size: 70px;
+        font-size: 5vw;
+        transform: translateY(-1vw);
     }
     #nameBox{
         font-family: 'Jua', sans-serif;
-        font-size: 50px;
-        width: 600px;
-        height:80px;
+        font-size: 5vw;
+        width: 30vw;
+        height:8vw;
         text-align: center;
-    } */
+    }
+    #nextBtn img{
+        width: 13vw;
+        height: auto;
+    }
 }

@@ -1,20 +1,25 @@
+html {
+    height: 100%;
+}
 body{
     width: 100%;
     height: 100%;
     margin: 0;
     background-color: #314580;
+    display: flex;
+    align-items: center;
 }
 #page_container{
     background-color: white;
-    margin: 10px auto;
+    margin: auto;
     /* border: 1px solid black; */
     text-align: center;
     width: 500px;
     height: auto;
 }
 #logoImg{
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     max-width: 30%;
     height: auto;
 }
@@ -31,6 +36,8 @@ body{
 }
 #text1{
     font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 #text2{
     font-size: 50px;
@@ -50,7 +57,7 @@ body{
 }
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
-    #page_container{
+        #page_container{
         margin-left: auto;
         margin-right: auto;
         /* border: 1px solid black; */
@@ -58,16 +65,44 @@ body{
         width: 100%;
         height: auto;
     }
-    h5{
-        font-size: 30px;
+    #openBtn img{
+        width: 40vw;
+        height: auto;
+    }
+    #text1{
+        font-size: 4vw;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    #text2{
+        font-size: 10vw;
+        margin-top: 0px;
+        margin-bottom: 2vw;
+    }
+    #text3{
+        font-size: 6vw;
+        margin-top: 5vw;
+        margin-bottom: 0;
+    }
+    #text4{
+        font-size: 5vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    #count{
+        font-size: 5vw;
+        color: #314580;
+    }
+    /* h5{
+        font-size: 3rem;
     }
     h1{
-        font-size: 70px;
+        font-size: 7rem;
     }
     h4{
-        font-size: 50px;
+        font-size: 5rem;
     }
     h2{
-        font-size: 60px;
-    }
+        font-size: 6rem;
+    } */
 }
