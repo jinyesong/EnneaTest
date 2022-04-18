@@ -10,7 +10,7 @@ for(let i=1; i<10; i++){
     }
 }
 const resultImg = document.createElement("img");
-resultImg.src = `../image/result${resultEnnea}.png`;
+resultImg.src = `../image/result${resultEnnea}.jpg`;
 document.getElementById("resultImg").appendChild(resultImg);
 
 // DB저장(name, date, ennea_result)
