@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-content: center;
 }
-#background_img {
+.background_img {
     margin: auto;
     height: 100%;
 }
@@ -16,37 +16,47 @@ body {
     display: flex;
     text-align: center;
     height: 100%;
-    left: -5%;
+    /* left: -5%; */
     /* background-image: url("../image/background_img.jpg");
     background-size: contain;
     background-repeat: no-repeat; */
 }
 #prologuePage{
     height: 100%;
-    background-size: contain;
+    /* background-size: contain;
     background-image: url("../image/prologue.png");
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background-repeat: no-repeat; */
+    /* background-position: 50%; */
     display: none;
     text-align: center;
+    height: 100%;
+    justify-content: center;
+    /* left: -5%; */
 }
 #chapterGoBtn{
+    position: absolute;
     display: inline-block;
-    margin-top: 4vw;
+    top: 32%;
+    transform: translate(-35px,-50%);
+    /* margin-top: 4vw; */
      /* 이거 방식 다르게 하면 좋을듯1 */
 }
 p{
     margin: 0px;
 }
-#prologuePage img{
+#nextBtn2 {
+    transform: translate(-35px,0%);
+    transform: translateY(490px);
+}
+/* #prologuePage img{
     width: 100px;
     height: auto;
-}
+} */
 #inner {
     margin: auto;
     position: absolute;
     width: 100%;
-    top: 25vh;
+    top: 34%;
     transform: translate(-35px,-50%);
     text-align: center;
 }
@@ -69,26 +79,23 @@ p{
     border-right: 0;
     border-bottom: 5px solid black;
 }
-#nextBtn{
-    /* margin-top: 2vw; */
-     /* 이거 방식 다르게 하면 좋을듯2 */
-    transform: translateY(500px);
+.nextBtn{
+    transform: translateY(420px);
     cursor: pointer;
 }
-#nextBtn img{
-    width: 100px;
+.imgbutton{
+    width: 120px;
     height: auto;
 }
-
-@media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
-    #background_img {
+@media(max-width: 660px){ /* 1023px 이하일 때(mobile) */
+    .background_img {
         margin: auto;
         width: 100%;
         height: auto;
     }
     #inner {
         position: absolute;
-        top: 42%;
+        top: 50%;
         transform: translate(-3.5vw, -25vw);
     }
     /* #imgContainer{
@@ -102,16 +109,16 @@ p{
         left: 17%;
     } */
 
-    #nextBtn{
+    .nextBtn{
         /* margin-top: 2vw; */
          /* 이거 방식 다르게 하면 좋을듯2 */
-        transform: translateY(50vw);
+        transform: translateY(45vw);
         cursor: pointer;
     }
     .questionText{
         font-family: 'Jua', sans-serif;
         font-size: 5vw;
-        transform: translateY(-1vw);
+        transform: translateY(-2vw);
     }
     #nameBox{
         font-family: 'Jua', sans-serif;
@@ -119,9 +126,17 @@ p{
         width: 30vw;
         height:8vw;
         text-align: center;
+        transform: translateY(3vw);
     }
-    #nextBtn img{
-        width: 13vw;
+    #nextBtn2 {
+        transform: translateY(69vw);
+    }
+    .imgbutton{
+        width: 16vw;
         height: auto;
+    }
+    #chapterGoBtn {
+        top: 50%;
+        transform: translate(-3.5vw, -25vw);
     }
 }

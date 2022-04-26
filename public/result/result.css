@@ -7,9 +7,15 @@ body{
     display: inline;
 }
 #resultImg img{
-    width: 50%;
-    height: auto;
 }
 #kakaoShareBtn{
     display: inline-block;
+}
+#second_Ennea {
+    position: absolute;
+}
+#resultImg {
+    text-align: center;
+    width: 50%;
+    height: auto;
 }
