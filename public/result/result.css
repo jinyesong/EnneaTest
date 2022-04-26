@@ -4,7 +4,13 @@ body{
     text-align: center;
 }
 #resultImg{
-    display: inline;
+    /* display: inline; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transform: translateX(60px);
+    /* width: 50%; */
+    /* height: auto; */
 }
 #resultImg img{
 }
@@ -13,9 +19,35 @@ body{
 }
 #second_Ennea {
     position: absolute;
+    top: 964px;
+    width: 150px;
+    transform: translateX(-267px);
 }
-#resultImg {
-    text-align: center;
-    width: 50%;
-    height: auto;
+#third_Ennea {
+    position: absolute;
+    top: 964px;
+    width: 150px;
+    transform: translateX(160px);
+}
+#boo1 {
+    position: absolute;
+    top: 1087px;
+    transform: translateX(-267px);
+    font-size: 32px;
+    font-family: 'Jua', sans-serif;
+}
+#boo2 {
+    position: absolute;
+    top: 1087px;
+    transform: translateX(160px);
+    font-size: 32px;
+    font-family: 'Jua', sans-serif;
+}
+#name {
+    position: absolute;
+    top: 1210px;
+    transform: translateX(-322px);
+    font-size: 30px;
+    font-family: 'Jua', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
