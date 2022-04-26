@@ -60,7 +60,8 @@ body{
     padding-top: 4px;
     text-align: center;
 }
-.questionSTR {
+.questionStr p{
+    font-family: 'Hahmlet', serif;
     font-size: 16px;
 }
 .select {
