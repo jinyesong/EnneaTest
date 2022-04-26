@@ -37,7 +37,7 @@ body {
     position: absolute;
     display: inline-block;
     top: 32%;
-    transform: translate(-35px,-50%);
+    transform: translate(-27px,-50%);
     /* margin-top: 4vw; */
      /* 이거 방식 다르게 하면 좋을듯1 */
 }
@@ -46,7 +46,10 @@ p{
 }
 #nextBtn2 {
     transform: translate(-35px,0%);
-    transform: translateY(490px);
+    transform: translateY(380px);
+}
+#nextBtn {
+    transform: translateY(314px);
 }
 /* #prologuePage img{
     width: 100px;
@@ -80,7 +83,7 @@ p{
     border-bottom: 5px solid black;
 }
 .nextBtn{
-    transform: translateY(420px);
+    transform: translateY(270px);
     cursor: pointer;
 }
 .imgbutton{

@@ -29,13 +29,13 @@ body{
     left: -2%;
 }
 #nextBtn img{
-    width: 100px;
+    width: 120px;
     height: auto;
 }
 #back {
     display: none;
     height: 100%;
-    background-image: url("../image/background_img.jpg");
+    background-image: url("../image/background_img.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50%;
