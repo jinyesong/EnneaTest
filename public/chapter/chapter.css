@@ -13,8 +13,9 @@ body{
     text-align: center;
     background-image: url("../image/background_img.jpg");
 }
-.chapterPage h1{
+.chapterPage label{
     font-family: 'Yeon Sung', cursive;
+    font-size: 30px;
 }
 #chapterTextContainer{
     writing-mode: vertical-rl;
@@ -24,8 +25,10 @@ body{
     text-align: center;
     position: absolute;
     width: 100%;
-    top: 40%;
-    left: 15%;
+    height: 600px; /* 조정필요 */
+    margin-top: 60px; /* 조정필요 */
+    top: 45%; /* 조정필요 */
+    left: 14%; /* 조정필요 */
     transform: translate(-50%,-50%);
 }
 #chapterTextContainer b{
