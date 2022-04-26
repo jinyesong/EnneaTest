@@ -4,47 +4,59 @@ html{
 body {
     background-color: #314580;
     height: 100%;
+    justify-content: center;
+    align-content: center;
+}
+.background_img {
+    margin: auto;
+    height: 100%;
 }
 #back {
+    display: flex;
+    text-align: center;
     height: 100%;
-    background-image: url("../image/background_img.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
 }
 #prologuePage{
     height: 100%;
-    background-size: contain;
-    background-image: url("../image/prologue.png");
-    background-repeat: no-repeat;
-    background-position: 50%;
     display: none;
     text-align: center;
+    height: 100%;
+    justify-content: center;
 }
 #chapterGoBtn{
+    position: absolute;
     display: inline-block;
-    margin-top: 40%; /* 이거 방식 다르게 하면 좋을듯1 */
+    top: 32%;
+    transform: translate(-27px,-50%);
 }
-#prologuePage img{
-    width: 100px;
-    height: auto;
+p{
+    margin: 0px;
+}
+#nextBtn2 {
+    transform: translate(-35px,0%);
+    transform: translateY(380px);
+}
+#nextBtn {
+    transform: translateY(314px);
 }
 #inner {
+    margin: auto;
     position: absolute;
     width: 100%;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    top: 34%;
+    transform: translate(-35px,-50%);
     text-align: center;
 }
 .questionText{
     font-family: 'Jua', sans-serif;
     font-size: 40px;
+    transform: translateY(5vh);
 }
 #nameBox{
     font-family: 'Jua', sans-serif;
     font-size: 35px;
-    width: 150px;
+    transform: translateY(60px);
+    width: 15vw;
     height: 40px;
     text-align: center;
     background-color: #E8E7D5;
@@ -54,35 +66,51 @@ body {
     border-right: 0;
     border-bottom: 5px solid black;
 }
-#nextBtn{
-    margin-top: 20%; /* 이거 방식 다르게 하면 좋을듯2 */
+.nextBtn{
+    transform: translateY(270px);
     cursor: pointer;
 }
-#nextBtn img{
+.imgbutton{
     width: 100px;
     height: auto;
 }
-
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
-    /* #imgContainer{
-        margin: 120px 0;
+    .background_img {
+        margin: auto;
         width: 100%;
         height: auto;
     }
-    #textContainer{
+    #inner {
         position: absolute;
-        top: 30%;
-        left: 17%;
+        top: 50%;
+        transform: translate(-3.5vw, -25vw);
     }
-    #questionText{
+    .nextBtn{
+        transform: translateY(45vw);
+        cursor: pointer;
+    }
+    .questionText{
         font-family: 'Jua', sans-serif;
-        font-size: 70px;
+        font-size: 5vw;
+        transform: translateY(-2vw);
     }
     #nameBox{
         font-family: 'Jua', sans-serif;
-        font-size: 50px;
-        width: 600px;
-        height:80px;
+        font-size: 5vw;
+        width: 30vw;
+        height:8vw;
         text-align: center;
-    } */
+        transform: translateY(3vw);
+    }
+    #nextBtn2 {
+        transform: translateY(69vw);
+    }
+    .imgbutton{
+        width: 16vw;
+        height: auto;
+    }
+    #chapterGoBtn {
+        top: 50%;
+        transform: translate(-3.5vw, -25vw);
+    }
 }

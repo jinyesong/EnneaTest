@@ -1,26 +1,28 @@
+html {
+    height: 100%;
+}
 body{
     width: 100%;
     height: 100%;
     margin: 0;
     background-color: #314580;
+    display: flex;
+    align-items: center;
 }
 #page_container{
     background-color: white;
     text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 500px;
+    margin: auto;
+    height: auto;
 }
 #logoImg{
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     max-width: 30%;
     height: auto;
 }
 #mainImg{
-    height: auto;
     max-width: 80%;
 }
 #openBtn img{
@@ -31,6 +33,8 @@ body{
 }
 #text1{
     font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 #text2{
     font-size: 50px;
@@ -51,31 +55,37 @@ body{
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
     #page_container{
-        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: 100%;
     }
     #openBtn img{
-        width: 300px;
+        width: 40vw;
+        height: auto;
     }
     #text1{
-        font-size: 47px;
+        font-size: 4vw;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
     #text2{
-        font-size: 100px;
+        font-size: 10vw;
+        margin-top: 0px;
+        margin-bottom: 2vw;
     }
     #text3{
-        font-size: 55px;
+        font-size: 6vw;
+        margin-top: 5vw;
+        margin-bottom: 0;
     }
     #text4{
-        font-size: 55px;
+        font-size: 5vw;
+        margin-top: 0;
+        margin-bottom: 0;
     }
     #count{
         color: #314580;
-        font-size: 55px;
+        font-size: 5vw;
     }
 }
