@@ -14,7 +14,7 @@ let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1)
 document.getElementById("back").addEventListener("click", function(e){
     if(e.target.tagName == "INPUT"){ //라디오버튼이 클릭되었을 때
         let clicked = e.target.name.substr(-1);
-        let score = e.target.className.substr(-1);
+        let score = e.target.className.substr(5, 1);
         isTrue[clicked-1] = score;
 
         if(!isTrue.includes(0)){ //라디오버튼이 모두 체크되었을 때

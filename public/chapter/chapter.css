@@ -66,7 +66,7 @@ body{
 .select {
     font-size:10px;
 }
-.select input[type=radio], .select input[type=radio]:checked{
+/* .select input[type=radio], .select input[type=radio]:checked{
     appearance: none;
     cursor: pointer;
     border: 1px solid #333;
@@ -74,6 +74,35 @@ body{
     font-weight:bold;
     border-radius: 50%;
     display: inline-block;
+} */
+.select input[type=radio], .select input[type=radio]:checked{
+    appearance: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.select input.negative_color{
+    background-color: #fff;
+    border: 2px solid rgb(106, 62, 117);
+}
+.select input.negative_color:checked{
+    background-color: rgb(106, 62, 117);
+    border: 2px solid rgb(106, 62, 117);
+}
+.select input.normal_color{
+    background-color: #fff;
+    border: 2px solid rgb(86, 82, 87);
+}
+.select input.normal_color:checked{
+    background-color: rgb(86, 82, 87);
+    border: 2px solid rgb(86, 82, 87);
+}
+.select input.positive_color{
+    background-color: #fff;
+    border: 2px solid rgb(67, 152, 81);
+}
+.select input.positive_color:checked{
+    background-color: rgb(67, 152, 81);
+    border: 2px solid rgb(67, 152, 81);
 }
 .check1, .check5{
     height: 39px;
@@ -86,12 +115,4 @@ body{
 .check3{
     height: 25px;
     width: 25px;
-}
-.select input[type=radio]{
-    background-color: #fff;
-    border: 2px solid #333;
-}
-.select input[type=radio]:checked{
-    background-color: #333;
-    border: 2px solid #333;
 }
