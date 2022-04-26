@@ -11,15 +11,28 @@ body{
     background-repeat: no-repeat;
     background-position: 50%;
     text-align: center;
+    background-image: url("../image/background_img.jpg");
 }
-#chapterPage_1{
-    background-image: url("../image/chapter1.png");
+.chapterPage h1{
+    font-family: 'Yeon Sung', cursive;
 }
-#chapterPage_2{
-    background-image: url("../image/chapter2.png");
+#chapterTextContainer{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yeon Sung', cursive;
+    font-size: 35px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 15%;
+    transform: translate(-50%,-50%);
 }
-#chapterPage_3{
-    background-image: url("../image/chapter3.png");
+#chapterTextContainer b{
+    font-size: 55px;
+}
+p.typing-txt{
+    display: none;
 }
 #nextBtn{
     display: inline-block;
@@ -54,6 +67,7 @@ body{
 .headline { /* 맨 위의 나는.. 부분 */
     text-align: center;
     font-size: 14px;
+    margin-top: 10px;
 }
 .questionbox { /* (문제 + 라디오박스 + 라디오 밑의 글씨) 의 div */
     width: 100%;
@@ -67,15 +81,6 @@ body{
 .select {
     font-size:10px;
 }
-/* .select input[type=radio], .select input[type=radio]:checked{
-    appearance: none;
-    cursor: pointer;
-    border: 1px solid #333;
-    line-height: 24px;
-    font-weight:bold;
-    border-radius: 50%;
-    display: inline-block;
-} */
 .select input[type=radio], .select input[type=radio]:checked{
     appearance: none;
     cursor: pointer;
