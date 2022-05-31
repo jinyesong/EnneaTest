@@ -2,7 +2,7 @@ html{
     height: 100%;
 }
 body {
-    background-color: #314580;
+    background-color: #FFE6E2;
     height: 100%;
     justify-content: center;
     align-content: center;
@@ -36,8 +36,12 @@ p{
     transform: translate(-35px,0%);
     transform: translateY(380px);
 }
-#nextBtn {
-    transform: translateY(314px);
+.nextBtn {
+    transform: translateY(350px);
+    cursor: pointer;
+}
+.nextBtn img{
+    width: 50px;
 }
 #inner {
     margin: auto;
@@ -47,32 +51,14 @@ p{
     transform: translate(-35px,-50%);
     text-align: center;
 }
-.questionText{
-    font-family: 'Jua', sans-serif;
-    font-size: 40px;
-    transform: translateY(5vh);
-}
 #nameBox{
-    font-family: 'Jua', sans-serif;
-    font-size: 35px;
-    transform: translateY(60px);
-    width: 15vw;
-    height: 40px;
+    font-family: 'Hahmlet', serif;
+    font-size: 20px;
     text-align: center;
-    background-color: #E8E7D5;
-    color: black;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 5px solid black;
-}
-.nextBtn{
-    transform: translateY(270px);
-    cursor: pointer;
-}
-.imgbutton{
+    transform: translate(25%, 155px);
     width: 100px;
-    height: auto;
+    height: 25px;
+    border: 0;
 }
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
     .background_img {

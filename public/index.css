@@ -5,14 +5,13 @@ body{
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: #314580;
+    background-color: #FFE6E2;
     display: flex;
     align-items: center;
 }
 #page_container{
     background-color: white;
     text-align: center;
-    width: 500px;
     margin: auto;
     height: auto;
 }
@@ -25,32 +24,20 @@ body{
 #mainImg{
     max-width: 80%;
 }
-#openBtn img{
-    width: 180px;
-}
 .font {
-    font-family: 'Jua', sans-serif;
-}
-#text1{
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-#text2{
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-#text3{
-    font-size: 30px;
-    margin-bottom: 0;
+    font-family: 'Hahmlet', serif;
 }
 #text4{
     font-size: 20px;
 }
 #count{
-    color: #314580;
+    color: #81BEF7;
     font-size: 30px;
+}
+#prologue{
+    height: 100%;
+    display: none;
+    justify-content: center;
 }
 
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */

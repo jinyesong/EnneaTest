@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <title>연애비책</title>
 </head>
 <body>
     <div id="page_container">
-        <img id="logoImg" src="/image/KSCA.jpg" alt="logo"><br>
-        <img id="mainImg" src="/image/startImg.jpg">
-        <p id="text1" class="font">당신에게만 공개하는</p>
-        <p id="text2" class="font">연 애 비 책</p>
+        <img id="mainGif" src="/image/startGif.gif">
         <div id="openBtn">
-            <a href="/name/name.html">
-                <img src="/image/openBtn.png">
-            </a>
+            <img src="/image/startBtnGif.gif">
         </div>
-        <p id="text3" class="font">참여자 수</p>
-        <p id="text4" class="font"><label id="count">7,776</label> 명</p>
+        <p id="text4" class="font"><label id="count">7,776</label> 명이 참여했어요</p>
+    </div>
+
+    <div id="prologue">
+        <video id="video" autoplay muted preload="auto">
+            <source src="image/prologueVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <script src="../__/firebase/8.6.5/firebase-app.js"></script>
@@ -28,5 +29,8 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
