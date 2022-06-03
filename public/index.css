@@ -39,7 +39,9 @@ body{
     display: none;
     justify-content: center;
 }
-
+#openBtn{
+    cursor: pointer;
+}
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
     #page_container{
         margin-left: auto;

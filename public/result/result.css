@@ -1,6 +1,6 @@
 body{
     width: 100%;
-    background-color: #314580;
+    background-color: #FFE6E2;
     text-align: center;
 }
 #resultImg{
@@ -9,6 +9,12 @@ body{
 #resultImg img{
     width: 50%;
     height: auto;
+}
+#btnContainer{
+    padding-top: 20px;
+}
+.btn{
+    padding: 0 20px;
 }
 #kakaoShareBtn{
     display: inline-block;

@@ -32,12 +32,14 @@ body {
 p{
     margin: 0px;
 }
-#nextBtn2 {
+/* #nextBtn2 {
     transform: translate(-35px,0%);
     transform: translateY(380px);
-}
+} */
 .nextBtn {
-    transform: translateY(350px);
+    position: absolute;
+    right: 550px;
+    top: 640px;
     cursor: pointer;
 }
 .nextBtn img{
@@ -47,7 +49,6 @@ p{
     margin: auto;
     position: absolute;
     width: 100%;
-    top: 34%;
     transform: translate(-35px,-50%);
     text-align: center;
 }
@@ -55,7 +56,9 @@ p{
     font-family: 'Hahmlet', serif;
     font-size: 20px;
     text-align: center;
-    transform: translate(25%, 155px);
+    position: absolute;
+    transform: translate(-26px);
+    top: 370px;
     width: 100px;
     height: 25px;
     border: 0;

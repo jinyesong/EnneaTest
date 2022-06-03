@@ -61,36 +61,36 @@ function checkEnnea_Nsum(chapter, question_num, val) {
 }
 
 // chapterPage 한글자씩 나타내기
-let tyInt;
-let typingBool = false;
-let typingIdx = 0; //문장 안의 글자 인덱스
-let typingPIdx = 0; //한 문장
-let typingText = $(".typing-txt").text();
-typingText = typingText.split(",");
-for(let i=0; i<typingText.length; i++){
-    typingText[i] = typingText[i].split("");
-}
-if(typingBool == false){
-    typingBool = true;
-    tyInt = setInterval(typing, 100); //반복
-}
+// let tyInt;
+// let typingBool = false;
+// let typingIdx = 0; //문장 안의 글자 인덱스
+// let typingPIdx = 0; //한 문장
+// let typingText = $(".typing-txt").text();
+// typingText = typingText.split(",");
+// for(let i=0; i<typingText.length; i++){
+//     typingText[i] = typingText[i].split("");
+// }
+// if(typingBool == false){
+//     typingBool = true;
+//     tyInt = setInterval(typing, 100); //반복
+// }
 
-function typing(){
-    if(typingIdx < typingText[typingPIdx].length && typingPIdx < 5){
-        if(typingIdx == 0){
-            let b = `<b>${typingText[typingPIdx][typingIdx]}</b>`
-            $("#typing" + Number(typingPIdx+1)).append(b);
-        }
-        else{
-            $("#typing" + Number(typingPIdx+1)).append(typingText[typingPIdx][typingIdx]);
-        }
-        typingIdx++;
-    }
-    else if(typingIdx == typingText[typingPIdx].length && typingPIdx < 5){
-        typingPIdx++;
-        typingIdx = 0;
-        if(typingPIdx == 4){
-            clearInterval(tyInt);
-        }
-    }
-}
+// function typing(){
+//     if(typingIdx < typingText[typingPIdx].length && typingPIdx < 5){
+//         if(typingIdx == 0){
+//             let b = `<b>${typingText[typingPIdx][typingIdx]}</b>`
+//             $("#typing" + Number(typingPIdx+1)).append(b);
+//         }
+//         else{
+//             $("#typing" + Number(typingPIdx+1)).append(typingText[typingPIdx][typingIdx]);
+//         }
+//         typingIdx++;
+//     }
+//     else if(typingIdx == typingText[typingPIdx].length && typingPIdx < 5){
+//         typingPIdx++;
+//         typingIdx = 0;
+//         if(typingPIdx == 4){
+//             clearInterval(tyInt);
+//         }
+//     }
+// }
