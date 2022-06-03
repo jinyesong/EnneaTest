@@ -1,7 +1,3 @@
-document.getElementById("nextBtn").addEventListener("click", function(){
-    document.getElementById("back").style.display = "block";
-    document.getElementsByClassName("chapterPage")[0].style.display = "none";
-});
 
 // let innerPage = 1;
 // radioBtn이 눌리는 이벤트 감지할때마다 현재 inner_(num)페이지의 name = question1,2,3,4,5가 모두 선택이 되었는지 확인
@@ -10,8 +6,15 @@ document.getElementById("nextBtn").addEventListener("click", function(){
 let innerPage = 1;
 let isTrue = [0,0,0,0,0];
 let questionNum = 7; //일단 7이상으로 초기화
+let pageNum = 1; // chapter내의 page가 몇번째 페이지인지 저장. 일단 0으로 초기화
 let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
-document.getElementById("back").addEventListener("click", function(e){
+
+document.getElementById("nextBtn").addEventListener("click", function(){
+    document.getElementById("back"+ chapterNum).style.display = "block";
+    document.getElementsByClassName("chapterPage")[0].style.display = "none";
+});
+
+document.getElementById("back"+ chapterNum).addEventListener("click", function(e){
     if(e.target.tagName == "INPUT"){ //라디오버튼이 클릭되었을 때
         let clicked = e.target.name.substr(-1);
         let score = e.target.className.substr(-1);
@@ -23,6 +26,7 @@ document.getElementById("back").addEventListener("click", function(e){
                 let QNum = (innerPage-1)*5 + i + 1;
                 checkEnnea_Nsum(chapterNum, QNum, isTrue[i]);
             }
+            pageNum = pageNum + 1
             if(questionNum < 7){ //마지막 inner일때
                 if(chapterNum == 3){
                     //결과페이지로 이동
@@ -32,6 +36,9 @@ document.getElementById("back").addEventListener("click", function(e){
                     chapterNum++;
                     location.href = "chapter" + chapterNum + ".html";
                 }
+            } else { // inner가 마지막이 아닐때
+                let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
+                document.getElementById("backimg"+ chapterNum).src = temp_url;
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
             innerPage++;
