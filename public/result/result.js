@@ -39,6 +39,7 @@ console.log(character[8]);
 
 // 배경이미지와 2번째 3번째 애니어 이미지 삽입
 var resultImg = document.createElement("img");
+resultImg.id = `resultMainImg`;
 resultImg.src = `../image/result${resultEnnea}.png`;
 document.getElementById("resultImg").appendChild(resultImg);
 
@@ -99,3 +100,14 @@ db.collection("User").add(data).then((result) => {
 document.getElementById("againBtn").addEventListener("click", function(){
     sessionStorage.clear();
 })
+
+setInterval(function(){
+    if($("#loading_video").prop("ended")){
+      //영상종료 후 진행할 함수 입력부분
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("resultImg").style.display = "block";
+        document.getElementById("resultImg").style.display = "flex";
+        document.getElementById("btnContainer").style.display = "block";
+    }
+  },200);
+//0.2초마다 비디오의 속성 ended의 값이 무엇인지 검사한다

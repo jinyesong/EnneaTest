@@ -12,12 +12,17 @@
     <title>결과</title>
 </head>
 <body>
+    <div id="loading">
+        <video id="loading_video" autoplay muted preload="auto">
+            <source src="../image/loading.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <div id="resultImg">
         <img id="second_Ennea" src="../image/1.png">
         <img id="third_Ennea" src="../image/2.png">
         <p id="boo1">[부캐1] </p>
         <p id="boo2">[부캐2] </p>
-
         <p id="name">__님을 위한 연애 비책</p>
     </div>
     <div id="btnContainer">
@@ -37,7 +42,7 @@
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="result.js"></script>
 </body>
 </html>

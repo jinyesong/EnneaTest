@@ -6,7 +6,6 @@ body{
     height: 100%;
     margin: 0;
     background-color: #FFE6E2;
-    display: flex;
     align-items: center;
 }
 #page_container{
@@ -14,6 +13,7 @@ body{
     text-align: center;
     margin: auto;
     height: auto;
+    width: 40%;
 }
 #logoImg{
     margin-top: 5px;
@@ -39,8 +39,21 @@ body{
     display: none;
     justify-content: center;
 }
+#prologue video{
+    justify-content: center;
+}
 #openBtn{
     cursor: pointer;
+}
+.nextBtn {
+    position: absolute;
+    right: 540px;
+    top: 650px;
+    cursor: pointer;
+    display: none;
+}
+.nextBtn img{
+    width: 50px;
 }
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
     #page_container{

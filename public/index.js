@@ -8,7 +8,7 @@ document.getElementById("openBtn").addEventListener("click", function(){
 setInterval(function(){
     if($("#video").prop("ended")){
       //영상종료 후 진행할 함수 입력부분
-      location.href="/name/name.html";
+      document.getElementById("nextBtn").style.display = "block";
     }
   },200);
 //0.2초마다 비디오의 속성 ended의 값이 무엇인지 검사한다
