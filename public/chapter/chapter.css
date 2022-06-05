@@ -8,19 +8,19 @@ body{
 }
 .chapterPage{
     height: 100%;
-    background-size: contain;
+    /* background-size: contain;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: 50%; */
     text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
 }
-#chapterPage_1{
-    background-image: url("../image/chapter1.png");
-}
-#chapterPage_2{
-    background-image: url("../image/chapter2.png");
-}
-#chapterPage_3{
-    background-image: url("../image/chapter3.png");
+.chapimg {
+    margin: 0 auto;
+    height: 1024px;
 }
 .imgContainer {
     width: 100%;
@@ -28,16 +28,13 @@ body{
     text-align: center;
 }
 #backimg1, #backimg2, #backimg3 {
-    height: 1024px;
+    width: 720px;
     top: 50%;
     transform: translate(-50%, -50%);
-        position: absolute;
+    position: absolute;
 }
 #nextBtn{
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    top: 80%;
+    width: 120px;
 }
 #nextBtn img{
     width: 120px;
@@ -110,49 +107,54 @@ body{
 .check1{
     height: 17vw;
     width: 7vw;
-    border: 2px solid #FF0000;
+    border: 2px solid #FA5858;
+    background-color:  #FA5858;
 }
 .check2{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #F78181;
+    border: 2px solid #FA5858;
+    background-color: #FA5858;
 }
 .check3{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #F6CECE;
+    border: 2px solid #F8E0E0;
+    background-color: #F8E0E0;
 }
 .check4{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #A9F5D0;
+    border: 2px solid #E1F5A9;
+    background-color: #E1F5A9;
 }
 .check5{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #01DF74;
+    border: 2px solid #D0FA58;
+    background-color: #D0FA58;
 }
-.select input[type=radio]{
+/* .select input[type=radio]{
     background-color: #fff;
-}
+} */
 .select input[class=check1]:checked{
-    background-color: #FF0000;
+    background-color:  #FA5858;
 }
 .select input[class=check2]:checked{
-    background-color: #F78181;
+    background-color: #FA5858;
 }
 .select input[class=check3]:checked{
-    background-color: #F6CECE;
+    background-color: #F8E0E0;
 }
 .select input[class=check4]:checked{
-    background-color: #A9F5D0;
+    background-color: #E1F5A9;
 }
 .select input[class=check5]:checked{
-    background-color: #01DF74;
+    background-color: #D0FA58;
 }
 
 
-@media(max-width: 1000px){
+/* @media(max-width: 1000px){
     #backimg1, #backimg2, #backimg3 {
         width: 950px;
         height: auto;
@@ -173,7 +175,7 @@ body{
         height: 60px;
         width: 60px;
     }
-}
+} */
 @media(max-width: 800px){
 
     #backimg1, #backimg2, #backimg3 {
@@ -195,6 +197,10 @@ body{
     }
     .inner{
         margin-top: 83px;
+    }
+    .chapimg {
+        height: auto;
+        width: 600px;
     }
 }
 @media(max-width: 600px){
@@ -218,6 +224,10 @@ body{
     }
     .inner{
         margin-top: 69px;
+    }
+    .chapimg {
+        height: auto;
+        width: 500px;
     }
 
 }
@@ -243,6 +253,10 @@ body{
     .inner{
         margin-top: 61px;
     }
+    .chapimg {
+        height: auto;
+        width: 420px;
+    }
 }
 @media(max-width: 400px){
 
@@ -253,6 +267,10 @@ body{
         top: 50%;
         transform: translate(-50%, -50%);
         position: absolute;
+    }
+    .chapimg {
+        height: auto;
+        width: 100%;
     }
 
 }

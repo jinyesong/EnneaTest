@@ -12,6 +12,37 @@ let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1)
 document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
+    
+    if(isMobile()) {
+        console.log("yes it is mobile");
+        let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
+        
+        let bckimg = document.getElementById("backimg"+ chapterNum);
+        bckimg.src = temp_url;
+        bckimg.style.width = "90%";
+        let qbox = document.getElementsByClassName("questionBox");
+        for ( let i = 0; i < qbox.length; i++) {
+            qbox[i].style.height = "290px";
+        }
+        let inr = document.getElementsByClassName("inner");
+        for ( let i = 0; i < inr.length; i++) {
+            inr[i].style.marginTop = "110px";
+            inr[i].style.left = "47.5%";
+        }
+        for( let i = 1; i < 6; i++ ) {
+            let chki = document.getElementsByClassName("check"+i);
+            for ( let j = 0; j < chki.length; j++) {
+                chki[j].style.height = "90px";
+                chki[j].style.width = "90px";
+                chki[j].style.marginInline = "33px";
+            }
+        }
+        console.log("change style 90%");
+    } else {
+        console.log("desktop");
+        let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
+        document.getElementById("backimg"+ chapterNum).src = temp_url;
+    }
 });
 
 document.getElementById("back"+ chapterNum).addEventListener("click", function(e){
@@ -37,8 +68,19 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                     location.href = "chapter" + chapterNum + ".html";
                 }
             } else { // inner가 마지막이 아닐때
-                let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
-                document.getElementById("backimg"+ chapterNum).src = temp_url;
+                console.log(isMobile());
+                if(isMobile()) {
+                    console.log("yes it is mobile");
+                    let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
+                    document.getElementById("backimg"+ chapterNum).src = temp_url;
+
+                } else {
+                    console.log("desktop");
+                    console.log(pageNum);
+                    console.log("why");
+                    let temp_url = "../image/part" + chapterNum + "_00" + pageNum +".png"
+                    document.getElementById("backimg"+ chapterNum).src = temp_url;
+                }
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
             innerPage++;
@@ -66,3 +108,10 @@ function checkEnnea_Nsum(chapter, question_num, val) {
         sessionStorage.setItem(session_key, val);
     }
 }
+
+// 추가된 부분
+function isMobile() {
+    console.log(navigator.userAgent);
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+// 추가부분 끝
