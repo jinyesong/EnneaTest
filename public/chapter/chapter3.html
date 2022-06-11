@@ -1,480 +1,381 @@
 <!DOCTYPE html>
 <html>
 <head> 
-    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="chapter.css">
-    <title>비책3. 자아도취</title>
+    <title>Part3</title>
 </head>
 <body>
     <div id="chapterPage_3" class="chapterPage">
-        <img class="partStartPage" src="../image/part3_start.jpg">
-        <div id="nextBtn">
-            <img src="../image/arrow.png">
-        </div>
-        <!-- <label><b>비책III</b></label>
-        <div id="chapterTextContainer">
-            <p class="typing-txt">자기자신을,아는 것이야 말로,도무지 헤어나오지 못하는,취향저격 포인트지!</p>
-            <p id="typing4" class="typing"> </p>
-            <p id="typing3" class="typing"> </p>
-            <p id="typing2" class="typing"> </p>
-            <p id="typing1" class="typing"> </p>
-        </div> -->
+        
+        <img id="nextBtn" src="../image/arrow.png">
+        <img class="chapimg" src="../image/chapter3.png">
+        
     </div>
-    <div id="back">
+    <div id="back3">
+        <div class="imgContainer">
+            <img id="backimg3" src="../image/part3_001.png">
+        </div>
+        <!-- process bar -->
+        <div class="processBar">
+            <img id="heartImg" src="../image/heart.PNG">
+            <progress id="progress" value="50" min="0" max="100"></progress>
+        </div>
         <div id="inner_1" class="inner">
-            <div class="headline">
-                <h2>나는..</h2>
-            </div>
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>감성에 젖어서 혼자 있을때가 많아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div>
             <!--질문 2-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>내 생각보다는 남의 생각에 공감할 때가 더 많아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question2">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question2"> 
+                    <input type="radio" class="check2" name="question2"> 
+                    <input type="radio" class="check3" name="question2"> 
+                    <input type="radio" class="check4" name="question2"> 
+                    <input type="radio" class="check5" name="question2">
+                     
+                </div>
             </div>
             <!--질문 3-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>이방인처럼 소외감을 느낄때가 많아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question3">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question3"> 
+                    <input type="radio" class="check2" name="question3"> 
+                    <input type="radio" class="check3" name="question3"> 
+                    <input type="radio" class="check4" name="question3"> 
+                    <input type="radio" class="check5" name="question3">
+                     
+                </div>
             </div>
             <!--질문 4-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>내 행동의 이유에 대해 회의감이 들 때가 있어.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question4">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question4"> 
+                    <input type="radio" class="check2" name="question4"> 
+                    <input type="radio" class="check3" name="question4"> 
+                    <input type="radio" class="check4" name="question4"> 
+                    <input type="radio" class="check5" name="question4">
+                     
+                </div>
             </div>
             <!--질문 5-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>나는 낭만적이고 예술가의 자질이 있는 거 같아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question5">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question5"> 
+                    <input type="radio" class="check2" name="question5"> 
+                    <input type="radio" class="check3" name="question5"> 
+                    <input type="radio" class="check4" name="question5"> 
+                    <input type="radio" class="check5" name="question5">
+                     
+                </div>
             </div><br><br>
         </div>
         <div id="inner_2" class="inner">
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>감동 받다가도 혼자 우울해지기도 해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div>
             <!--질문 2-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>친구들이 나에게 의지할 때 기분이 좋아!</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question2">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question2"> 
+                    <input type="radio" class="check2" name="question2"> 
+                    <input type="radio" class="check3" name="question2"> 
+                    <input type="radio" class="check4" name="question2"> 
+                    <input type="radio" class="check5" name="question2">
+                     
+                </div>
             </div>
             <!--질문 3-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>다른 사람들보다 독특한 감정을 가지고 있어.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question3">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question3"> 
+                    <input type="radio" class="check2" name="question3"> 
+                    <input type="radio" class="check3" name="question3"> 
+                    <input type="radio" class="check4" name="question3"> 
+                    <input type="radio" class="check5" name="question3">
+                     
+                </div>
             </div>
             <!--질문 4-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>분위기에 약하고 자기 생각에 잘 빠져.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question4">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question4"> 
+                    <input type="radio" class="check2" name="question4"> 
+                    <input type="radio" class="check3" name="question4"> 
+                    <input type="radio" class="check4" name="question4"> 
+                    <input type="radio" class="check5" name="question4">
+                     
+                </div>
             </div>
             <!--질문 5-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>비현실적인 몽상을 자주해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question5">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question5"> 
+                    <input type="radio" class="check2" name="question5"> 
+                    <input type="radio" class="check3" name="question5"> 
+                    <input type="radio" class="check4" name="question5"> 
+                    <input type="radio" class="check5" name="question5">
+                     
+                </div>
             </div><br><br>
         </div>
         <div id="inner_3" class="inner">
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>자극적이고 두근거리는 활동이 좋아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div>
             <!--질문 2-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>소중한 사람이라도 가끔은 의심하기도 해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question2">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question2"> 
+                    <input type="radio" class="check2" name="question2"> 
+                    <input type="radio" class="check3" name="question2"> 
+                    <input type="radio" class="check4" name="question2"> 
+                    <input type="radio" class="check5" name="question2">
+                     
+                </div>
             </div>
             <!--질문 3-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>권위를 믿지 않고 규칙을 무시하곤 하지.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question3">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question3"> 
+                    <input type="radio" class="check2" name="question3"> 
+                    <input type="radio" class="check3" name="question3"> 
+                    <input type="radio" class="check4" name="question3"> 
+                    <input type="radio" class="check5" name="question3">
+                     
+                </div>
             </div>
             <!--질문 4-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>내가 이룬 성공에 대해서도 가끔은 평가절하해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question4">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question4"> 
+                    <input type="radio" class="check2" name="question4"> 
+                    <input type="radio" class="check3" name="question4"> 
+                    <input type="radio" class="check4" name="question4"> 
+                    <input type="radio" class="check5" name="question4">
+                     
+                </div>
             </div>
             <!--질문 5-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>지적이고 냉철하게 관찰하는 스타일이야.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question5">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question5"> 
+                    <input type="radio" class="check2" name="question5"> 
+                    <input type="radio" class="check3" name="question5"> 
+                    <input type="radio" class="check4" name="question5"> 
+                    <input type="radio" class="check5" name="question5">
+                     
+                </div>
             </div><br><br>
         </div>
         <div id="inner_4" class="inner">
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>아이처럼 명랑하고 순진해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div>
             <!--질문 2-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>나를 둘러싼 세계를 이해하는 것에 관심이 많아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question2">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question2"> 
+                    <input type="radio" class="check2" name="question2"> 
+                    <input type="radio" class="check3" name="question2"> 
+                    <input type="radio" class="check4" name="question2"> 
+                    <input type="radio" class="check5" name="question2">
+                     
+                </div>
             </div>
             <!--질문 3-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>주변으로부터 "너는 용기가 필요해" 라는 말을 들을 때가 있어.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question3">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question3"> 
+                    <input type="radio" class="check2" name="question3"> 
+                    <input type="radio" class="check3" name="question3"> 
+                    <input type="radio" class="check4" name="question3"> 
+                    <input type="radio" class="check5" name="question3">
+                     
+                </div>
             </div>
             <!--질문 4-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>미래에 대해서 항상 열정적이지!</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question4">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question4"> 
+                    <input type="radio" class="check2" name="question4"> 
+                    <input type="radio" class="check3" name="question4"> 
+                    <input type="radio" class="check4" name="question4"> 
+                    <input type="radio" class="check5" name="question4">
+                     
+                </div>
             </div>
             <!--질문 5-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>머리로 모든 것을 이해하고 판단하지.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question5">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question5"> 
+                    <input type="radio" class="check2" name="question5"> 
+                    <input type="radio" class="check3" name="question5"> 
+                    <input type="radio" class="check4" name="question5"> 
+                    <input type="radio" class="check5" name="question5">
+                     
+                </div>
             </div><br><br>
         </div>
         <div id="inner_5" class="inner">
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>나의 리더십 점수는?</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div>
             <!--질문 2-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>현재와 지금의 나에게 만족하는 편이야.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question2">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question2"> 
+                    <input type="radio" class="check2" name="question2"> 
+                    <input type="radio" class="check3" name="question2"> 
+                    <input type="radio" class="check4" name="question2"> 
+                    <input type="radio" class="check5" name="question2">
+                     
+                </div>
             </div>
             <!--질문 3-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>주변에 충분히 영향력이 있는 사람이지.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question3">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question3"> 
+                    <input type="radio" class="check2" name="question3"> 
+                    <input type="radio" class="check3" name="question3"> 
+                    <input type="radio" class="check4" name="question3"> 
+                    <input type="radio" class="check5" name="question3">
+                     
+                </div>
             </div>
             <!--질문 4-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>감정기복이 적은 원만한 사람이야.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question4">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question4"> 
+                    <input type="radio" class="check2" name="question4"> 
+                    <input type="radio" class="check3" name="question4"> 
+                    <input type="radio" class="check4" name="question4"> 
+                    <input type="radio" class="check5" name="question4">
+                     
+                </div>
             </div>
             <!--질문 5-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>다른 사람보다 성실하고 책임감이 강해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question5">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question5"> 
+                    <input type="radio" class="check2" name="question5"> 
+                    <input type="radio" class="check3" name="question5"> 
+                    <input type="radio" class="check4" name="question5"> 
+                    <input type="radio" class="check5" name="question5">
+                     
+                </div>
             </div><br><br>
         </div>
         <div id="inner_6" class="inner">
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>나는 다른 사람들의 신뢰를 얻을 수 있어.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div>
             <!--질문 2-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>정직하고 자제력이 있어.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question2">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question2">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question2"> 
+                    <input type="radio" class="check2" name="question2"> 
+                    <input type="radio" class="check3" name="question2"> 
+                    <input type="radio" class="check4" name="question2"> 
+                    <input type="radio" class="check5" name="question2">
+                     
+                </div>
             </div>
             <!--질문 3-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>정의감이 강하고 근면해.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question3">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question3">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question3"> 
+                    <input type="radio" class="check2" name="question3"> 
+                    <input type="radio" class="check3" name="question3"> 
+                    <input type="radio" class="check4" name="question3"> 
+                    <input type="radio" class="check5" name="question3">
+                     
+                </div>
             </div>
             <!--질문 4-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>사람들을 유쾌하고 편하게 대하는 스타일이야.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question4">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question4">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question4"> 
+                    <input type="radio" class="check2" name="question4"> 
+                    <input type="radio" class="check3" name="question4"> 
+                    <input type="radio" class="check4" name="question4"> 
+                    <input type="radio" class="check5" name="question4">
+                     
+                </div>
             </div>
             <!--질문 5-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>완벽을 위해 끝까지 참고 노력하는 스타일이야.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question5">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question5">
-                    <br>전혀 그렇지 않다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question5"> 
+                    <input type="radio" class="check2" name="question5"> 
+                    <input type="radio" class="check3" name="question5"> 
+                    <input type="radio" class="check4" name="question5"> 
+                    <input type="radio" class="check5" name="question5">
+                     
+                </div>
             </div><br><br>
         </div>
         <div id="inner_7" class="inner">
             <!--질문 1-->
             <div class="questionBox">
-                <div class="questionStr">
-                    <p>그냥 이유 없이 나를 좋아하는 사람이 많아.</p>
-                </div>
                 <div class="select">
-                    <input type="radio" class="check1 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check2 negative_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check3 normal_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check4 positive_color" name="question1">&nbsp&nbsp
-                    <input type="radio" class="check5 positive_color" name="question1">
-                    <br>전혀 그렇지 않다 &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp매우 그렇다
-                </div><br>
+                    <input type="radio" class="check1" name="question1"> 
+                    <input type="radio" class="check2" name="question1"> 
+                    <input type="radio" class="check3" name="question1"> 
+                    <input type="radio" class="check4" name="question1"> 
+                    <input type="radio" class="check5" name="question1">
+                     
+                </div>
             </div><br><br>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="chapter.js"></script>
 </body>
 </html>
-

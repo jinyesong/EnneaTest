@@ -2,39 +2,59 @@ html{
     height: 100%;
 }
 body{
-    background-color: #FFE6E2;
+    background-image: url("../image/background.png");;
     height: 100%;
+    text-align: center;
+    background-position-x: 52px;
+    background-position-y: 87px;
+    background-size: 808px;
 }
 .chapterPage{
-    display: flex;
     text-align: center;
-    height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.partStartPage{
-    margin: auto;
-    height: 100%;
+.chapimg {
+    margin: 0 auto;
+    height: 720px;
 }
-#nextBtn {
+.imgContainer {
+    width: 100%;
+    width: auto;
+    text-align: center;
+}
+#backimg1, #backimg2, #backimg3 {
+    height: 720px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+#nextBtn{
     position: absolute;
     right: 570px;
-    top: 650px;
+    top: 610px;
     cursor: pointer;
-}
-#nextBtn img{
     width: 50px;
 }
-#back {
+#back1 {
     display: none;
     height: 100%;
-    background-image: url("../image/background_img.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
+    position: relative;
+}
+#back2 {
+    display: none;
+    height: 100%;
+}
+#back3 {
+    display: none;
+    height: 100%;
 }
 .inner{
     text-align: center;
     position: absolute;
     width: 100%;
+    margin-left: 10px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -42,73 +62,138 @@ body{
 #inner_2, #inner_3, #inner_4, #inner_5, #inner_6, #inner_7{
     display: none;
 }
-.headline { /* 맨 위의 나는.. 부분 */
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-}
-.questionbox { /* (문제 + 라디오박스 + 라디오 밑의 글씨) 의 div */
+.questionBox { /* (문제 + 라디오박스 + 라디오 밑의 글씨) 의 div */
     width: 100%;
-    padding-top: 4px;
+    padding-top: 15px;
     text-align: center;
+    position: relative;
+    top: 58px;
+    /* margin-bottom: 80px; */
+    height: 104px;
 }
-.questionStr p{
-    font-family: 'Hahmlet', serif;
+.questionSTR {
     font-size: 16px;
 }
-.select {
-    font-size:10px;
+.questionBox:before {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
 }
 .select input[type=radio], .select input[type=radio]:checked{
     appearance: none;
     cursor: pointer;
+    line-height: 24px;
+    font-weight:bold;
     border-radius: 50%;
+    display: inline-block;
+    margin-inline: 15px;
+    height: 35px;
+    width: 35px;
 }
-.select input.negative_color{
-    background-color: #fff;
-    border: 2px solid rgb(106, 62, 117);
+.check1{
+    height: 17vw;
+    width: 7vw;
+    border: 2px solid #FA5858;
+    /* background-color:  #FA5858; */
 }
-.select input.negative_color:checked{
-    background-color: rgb(106, 62, 117);
-    border: 2px solid rgb(106, 62, 117);
-}
-.select input.normal_color{
-    background-color: #fff;
-    border: 2px solid rgb(86, 82, 87);
-}
-.select input.normal_color:checked{
-    background-color: rgb(86, 82, 87);
-    border: 2px solid rgb(86, 82, 87);
-}
-.select input.positive_color{
-    background-color: #fff;
-    border: 2px solid rgb(67, 152, 81);
-}
-.select input.positive_color:checked{
-    background-color: rgb(67, 152, 81);
-    border: 2px solid rgb(67, 152, 81);
-}
-.check1, .check5{
-    height: 39px;
-    width: 39px;
-}
-.check4, .check2{
-    height: 32px;
-    width: 32px;
+.check2{
+    height: 7vw;
+    width: 7vw;
+    border: 2px solid #F5A9A9;
+    /* background-color: #F5A9A9; */
 }
 .check3{
-    height: 25px;
-    width: 25px;
+    height: 7vw;
+    width: 7vw;
+    border: 2px solid #F8E0E0;
+    /* background-color: #F8E0E0; */
+}
+.check4{
+    height: 7vw;
+    width: 7vw;
+    border: 2px solid #F5A9A9;
+    /* background-color: #F5A9A9; */
+}
+.check5{
+    height: 7vw;
+    width: 7vw;
+    border: 2px solid #FA5858;
+    /* background-color: #FA5858; */
+}
+.select input[class=check1]:checked{
+    background-color:  #FA5858;
+}
+.select input[class=check2]:checked{
+    background-color: #F5A9A9;
+}
+.select input[class=check3]:checked{
+    background-color: #F8E0E0;
+}
+.select input[class=check4]:checked{
+    background-color: #F5A9A9;
+}
+.select input[class=check5]:checked{
+    background-color: #FA5858;
+}
+@media(max-width: 550px){
+    #backimg1, #backimg2, #backimg3 {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+    .chapimg {
+        height: auto;
+        width: 100%;
+    }
+
+    .inner {
+        margin-left: 8px;
+        margin-top: 45px;
+    }
+    .questionBox {
+        top: 4vw;
+        height: 21.5vw;
+        padding-top: 6px
+    }
+    #nextBtn {
+        width: 15vw;
+    }
+    .select input[type=radio], .select input[type=radio]:checked{
+        appearance: none;
+        cursor: pointer;
+        line-height: 24px;
+        font-weight:bold;
+        border-radius: 50%;
+        display: inline-block;
+        margin-inline: 2.5vw;
+        height: 7vw;
+        width: 7vw;
+    }
+    .chapterPage {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 /* 진행바 */
+.processBar{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #heartImg{
+    position: absolute;
+    top: 5px;
     width: 40px;
     height: auto;
     /* progress bar 차오르는 만큼 위치 이동 */
 }
 #progress {
+    margin-top: 35px;
     appearance: none;
-    width: 30%;
+    width: 380px;
 }
 #progress::-webkit-progress-bar {
     background:#fff;
