@@ -111,3 +111,30 @@ setInterval(function(){
     }
   },200);
 //0.2초마다 비디오의 속성 ended의 값이 무엇인지 검사한다
+
+//카카오 공유
+let ResultImg = 'http://localhost:5000/image/'+resultEnnea+'.png'; //왜 이미지가 안뜨지 곤란
+let ResultText = character[resultEnnea-1];
+let SubText1 = character[Ennea2nd-1];
+let SubText2 = character[Ennea3nd-1];
+
+if (!Kakao.isInitialized()) { // init 체크
+  Kakao.init('0bce43c810f40167012b02fd3553342d');
+}
+var sendKakao = function() {
+  // 메시지 공유 함수
+  Kakao.Link.sendScrap({
+    requestUrl: 'http://localhost:5000/result/result.html', // 페이지 url
+    templateId: 78079, // 메시지템플릿 번호
+    templateArgs: {
+      img: ResultImg, // 결과 이미지 주소 ${img}
+      main: ResultText, // 본캐 이름 텍스트 ${main}
+      sub_1: SubText1, // 부캐 이름 텍스트 ${sub_1}
+      sub_2: SubText2 // 부캐 이름 텍스트 ${sub_2}
+    },
+  });
+};
+
+document.getElementById("kakaoShareBtn").addEventListener("click", function(){
+  sendKakao();
+})

@@ -1,93 +1,139 @@
-html {
-    height: 100%;
-}
-body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-color: #FFE6E2;
-    align-items: center;
-}
-#page_container{
-    background-color: white;
-    text-align: center;
-    margin: auto;
-    height: auto;
-    width: 40%;
-}
-#logoImg{
-    margin-top: 5px;
-    margin-bottom: 10px;
-    max-width: 30%;
-    height: auto;
-}
-#mainImg{
-    max-width: 80%;
-}
-.font {
-    font-family: 'Hahmlet', serif;
-}
-#text4{
-    font-size: 20px;
-}
-#count{
-    color: #81BEF7;
-    font-size: 30px;
-}
-#prologue{
-    height: 100%;
-    display: none;
-    justify-content: center;
-}
-#prologue video{
-    justify-content: center;
-}
-#openBtn{
-    cursor: pointer;
-}
-.nextBtn {
-    position: absolute;
-    right: 540px;
-    top: 650px;
-    cursor: pointer;
-    display: none;
-}
-.nextBtn img{
-    width: 50px;
-}
-@media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
-    #page_container{
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        width: 100%;
+/* 빅데스크탑 */
+
+@media screen and (max-width:1799px) {
+/* 데스크탑 */
+    html {
+        height: 100%;
     }
-    #openBtn img{
-        width: 40vw;
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #FFE6E2;
+        align-items: center;
+    }
+    #page_container{
+        background-color: white;
+        text-align: center;
+        margin: auto;
+        height: auto;
+        width: 40%;
+    }
+    #logoImg{
+        margin-top: 5px;
+        margin-bottom: 10px;
+        max-width: 30%;
         height: auto;
     }
-    #text1{
-        font-size: 4vw;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    #text2{
-        font-size: 10vw;
-        margin-top: 0px;
-        margin-bottom: 2vw;
-    }
-    #text3{
-        font-size: 6vw;
-        margin-top: 5vw;
-        margin-bottom: 0;
+    .font {
+        font-family: 'Hahmlet', serif;
     }
     #text4{
-        font-size: 5vw;
-        margin-top: 0;
-        margin-bottom: 0;
+        font-size: 20px;
     }
     #count{
-        color: #314580;
-        font-size: 5vw;
+        color: #81BEF7;
+        font-size: 30px;
+    }
+    #prologue{
+        height: 100%;
+        display: none;
+        justify-content: center;
+    }
+    #prologue video{
+        justify-content: center;
+    }
+    #openBtn{
+        cursor: pointer;
+    }
+    .nextBtn {
+        position: absolute;
+        right: 540px;
+        top: 650px;
+        cursor: pointer;
+        display: none;
+    }
+    .nextBtn img{
+        width: 50px;
+    }
+}
+@media screen and (max-width:1199px) {
+/* 타블렛 가로 */
+}
+@media screen and (max-width:899px) {
+/* 모바일 가로, 타블렛 세로 */
+    html {
+        width: fit-content;
+        height: fit-content;
+        margin: auto 0;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        background-color: white;
+    }
+    #page_container{
+        background-color: white;
+        text-align: center;
+        width: 100%;
+        transform: translateY(20%);
+    }
+    #prologue{
+        height: 100%;
+        display: none;
+        justify-content: center;
+    }
+    #prologue video{
+        justify-content: center;
+    }
+    .font {
+        font-family: 'Hahmlet', serif;
+    }
+    #text4{
+        font-size: 30px;
+        display: inline-block;
+    }
+    #count{
+        color: #81BEF7;
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:599px) {
+/* 모바일 세로 */
+    html {
+        width: fit-content;
+        height: auto;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        background-color: white;
+    }
+    #page_container{
+        background-color: white;
+        text-align: center;
+        width: 100%;
+        transform: translateY(20%);
+    }
+    #prologue{
+        width: auto;
+        display: none;
+        transform: translateY(20%);
+    }
+    #prologue video{
+        justify-content: center;
+    }
+    .font {
+        font-family: 'Hahmlet', serif;
+    }
+    #text4{
+        font-size: 30px;
+        display: inline-block;
+    }
+    #count{
+        color: #81BEF7;
+        font-size: 40px;
     }
 }
