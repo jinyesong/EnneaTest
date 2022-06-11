@@ -100,31 +100,31 @@ body{
     height: 17vw;
     width: 7vw;
     border: 2px solid #FA5858;
-    background-color:  #FA5858;
+    /* background-color:  #FA5858; */
 }
 .check2{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #FA5858;
-    background-color: #FA5858;
+    border: 2px solid #F5A9A9;
+    /* background-color: #F5A9A9; */
 }
 .check3{
     height: 7vw;
     width: 7vw;
     border: 2px solid #F8E0E0;
-    background-color: #F8E0E0;
+    /* background-color: #F8E0E0; */
 }
 .check4{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #E1F5A9;
-    background-color: #E1F5A9;
+    border: 2px solid #F5A9A9;
+    /* background-color: #F5A9A9; */
 }
 .check5{
     height: 7vw;
     width: 7vw;
-    border: 2px solid #D0FA58;
-    background-color: #D0FA58;
+    border: 2px solid #FA5858;
+    /* background-color: #FA5858; */
 }
 /* .select input[type=radio]{
     background-color: #fff;
@@ -133,16 +133,16 @@ body{
     background-color:  #FA5858;
 }
 .select input[class=check2]:checked{
-    background-color: #FA5858;
+    background-color: #F5A9A9;
 }
 .select input[class=check3]:checked{
     background-color: #F8E0E0;
 }
 .select input[class=check4]:checked{
-    background-color: #E1F5A9;
+    background-color: #F5A9A9;
 }
 .select input[class=check5]:checked{
-    background-color: #D0FA58;
+    background-color: #FA5858;
 }
 
 
@@ -267,11 +267,12 @@ body{
 
     .inner {
         margin-left: 8px;
+        margin-top: 45px;
     }
     .questionBox {
         top: 4vw;
         height: 21.5vw;
-        padding-top: 3px
+        padding-top: 6px
     }
     #nextBtn {
         width: 15vw;
@@ -283,7 +284,7 @@ body{
         font-weight:bold;
         border-radius: 50%;
         display: inline-block;
-        margin-inline: 1.5vw;
+        margin-inline: 2.5vw;
         height: 7vw;
         width: 7vw;
     }

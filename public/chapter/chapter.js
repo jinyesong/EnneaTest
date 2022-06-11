@@ -88,6 +88,12 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
             questionNum = document.getElementById("inner_"+innerPage).childElementCount;
             isTrue = new Array(questionNum-2).fill(0); //배열 초기화 왜그런지 모르겠지만 -2해줘야 맞음
             document.getElementById("inner_"+innerPage).style.display = "block";
+            // alert(questionNum);
+            if (questionNum != 7) {
+                document.getElementById("inner_"+innerPage).style.left = "0%";
+                document.getElementById("inner_"+innerPage).style.position = "absolute";
+                document.getElementById("inner_"+innerPage).style.transform = "translateY(-320px)";                
+            }
         }
     }
 })
