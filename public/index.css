@@ -15,9 +15,15 @@
     #page_container{
         background-color: white;
         text-align: center;
-        margin: auto;
+        margin: 15px auto;
         height: auto;
-        width: 40%;
+        width: 500px;
+    }
+    #mainGif {
+        width: 500px;
+    }
+    #openBtn img {
+        width: 500px;
     }
     #logoImg{
         margin-top: 5px;
@@ -48,8 +54,8 @@
     }
     .nextBtn {
         position: absolute;
-        right: 540px;
-        top: 650px;
+        transform: translate(160px, 280px);
+        top: 50%;
         cursor: pointer;
         display: none;
     }
