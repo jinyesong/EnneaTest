@@ -183,13 +183,21 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
-#heartImg{
+.heartImg{
     position: absolute;
     top: 5px;
     width: 40px;
     height: auto;
-    /* progress bar 차오르는 만큼 위치 이동 */
 }
+/* #heartImg1{
+    left: 5px;
+}
+#heartImg2{
+    left: 40px;
+}
+#heartImg3{
+    left: 100px;
+} */
 #progress {
     margin-top: 35px;
     appearance: none;

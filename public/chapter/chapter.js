@@ -7,6 +7,15 @@ let isTrue = [0,0,0,0,0];
 let questionNum = 7; //일단 7이상으로 초기화
 let pageNum = 1; // chapter내의 page가 몇번째 페이지인지 저장. 일단 0으로 초기화
 let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
+//하트 위치 초기화
+let heartPX = 5;
+if(chapterNum == 2){
+    heartPX += 100;
+}
+else if(chapterNum == 3){
+    heartPX += 205;
+}
+$(".heartImg").css("left", heartPX+"px");
 
 document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
@@ -67,12 +76,17 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                     location.href = "chapter" + chapterNum + ".html";
                 }
             } else { // inner가 마지막이 아닐때
+                //하트바 게이지 증가
+                let progressBar = document.getElementById("progress");
+                progressBar.value = progressBar.value + 5.55;
+                heartPX += 20;
+                $(".heartImg").css("left", heartPX+"px");
+
                 console.log(isMobile());
                 if(isMobile()) {
                     console.log("yes it is mobile");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
                     document.getElementById("backimg"+ chapterNum).src = temp_url;
-
                 } else {
                     console.log("desktop");
                     console.log(pageNum);
