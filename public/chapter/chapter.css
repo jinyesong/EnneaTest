@@ -15,7 +15,7 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
-.chapimg {
+#chapimg {
     margin: 0 auto;
     height: 720px;
 }
@@ -182,7 +182,7 @@ body{
     }
 }
 /* 진행바 */
-.processBar{
+#processBar{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -193,15 +193,6 @@ body{
     width: 40px;
     height: auto;
 }
-/* #heartImg1{
-    left: 5px;
-}
-#heartImg2{
-    left: 40px;
-}
-#heartImg3{
-    left: 100px;
-} */
 #progress {
     margin-top: 35px;
     appearance: none;
