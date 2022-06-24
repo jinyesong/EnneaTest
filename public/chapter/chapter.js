@@ -12,26 +12,66 @@ let questionNum = 7; //일단 7이상으로 초기화
 let pageNum = 1; // chapter내의 page가 몇번째 페이지인지 저장. 일단 0으로 초기화
 let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
 //하트 위치 초기화
+let progressBar;
 let heartPX = 5;
 if(chapterNum == 2){
-    heartPX += 100;
+    if(isMobile()){
+        heartPX += 235;
+    }
+    else{
+        heartPX += 100;
+    }
 }
 else if(chapterNum == 3){
-    heartPX += 205;
+    if(isMobile()){
+        heartPX += 480;
+    }
+    else{
+        heartPX += 205;
+    }
 }
 $(".heartImg").css("left", heartPX+"px");
+let heartMoveNum = 20; //하트이미지 움직이는 정도
+
+if(isMobile()){
+    console.log("yes it is mobile");
+    let chapDiv = document.getElementById("chapterPage_"+chapterNum);
+    chapDiv.style.width = "100%";
+    chapDiv.style.height = "100%";
+    let chapImg = document.getElementById("chapimg");
+    let chap_url = "../image/chapter" + chapterNum + "_mb.png";
+    chapImg.src = chap_url;
+    chapImg.style.width = "100%";
+    chapImg.style.height = "90%";
+    let nextBtn = document.getElementById("nextBtn");
+    nextBtn.style.width = "140px";
+    nextBtn.style.right = "110px";
+    nextBtn.style.top = "77%"; 
+}
 
 document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     
     if(isMobile()) {
-        console.log("yes it is mobile");
         let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
-        
         let bckimg = document.getElementById("backimg"+ chapterNum);
         bckimg.src = temp_url;
-        bckimg.style.width = "90%";
+        bckimg.style.width = "95%";
+        bckimg.style.height = "90%";
+        bckimg.style.marginTop = "50px";
+
+        //하트바 모바일 초기화
+        let heartImg = document.getElementById("heartImg"+chapterNum);
+        heartImg.style.width = "100px";
+        progressBar = document.getElementById("progress");
+        let progressDiv = document.getElementById("processBar");
+        progressDiv.style.width = "90%";
+        progressBar.style.width = "100%";
+        progressBar.style.height = "30px";
+        progressBar.style.marginTop = "75px";
+        heartMoveNum = 43;
+
         let qbox = document.getElementsByClassName("questionBox");
         for ( let i = 0; i < qbox.length; i++) {
             qbox[i].style.height = "290px";
@@ -81,12 +121,10 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 }
             } else { // inner가 마지막이 아닐때
                 //하트바 게이지 증가
-                let progressBar = document.getElementById("progress");
                 progressBar.value = progressBar.value + 5.55;
-                heartPX += 20;
+                heartPX += heartMoveNum;
                 $(".heartImg").css("left", heartPX+"px");
 
-                console.log(isMobile());
                 if(isMobile()) {
                     console.log("yes it is mobile");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
