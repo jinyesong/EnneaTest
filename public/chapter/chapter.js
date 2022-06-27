@@ -9,6 +9,7 @@ let pageNum = 1; // chapter내의 page가 몇번째 페이지인지 저장. 일�
 let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
 //하트 위치 초기화
 let progressBar;
+let inner = document.getElementsByClassName("inner");
 let heartPX = 5;
 if(chapterNum == 2){
     if(isMobile()){
@@ -70,12 +71,13 @@ document.getElementById("nextBtn").addEventListener("click", function(){
 
         let qbox = document.getElementsByClassName("questionBox");
         for ( let i = 0; i < qbox.length; i++) {
-            qbox[i].style.height = "290px";
+            qbox[i].style.height = "20%";
         }
         let inr = document.getElementsByClassName("inner");
         for ( let i = 0; i < inr.length; i++) {
-            inr[i].style.marginTop = "110px";
-            inr[i].style.left = "47.5%";
+            inr[i].style.marginTop = "10%";
+            inr[i].style.height = "85%";
+            inr[i].style.left = "47%";
         }
         for( let i = 1; i < 6; i++ ) {
             let chki = document.getElementsByClassName("check"+i);
@@ -125,6 +127,7 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                     console.log("yes it is mobile");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
                     document.getElementById("backimg"+ chapterNum).src = temp_url;
+
                 } else {
                     console.log("desktop");
                     console.log(pageNum);

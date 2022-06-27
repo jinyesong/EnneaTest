@@ -135,6 +135,7 @@ body{
 .select input[class=check5]:checked{
     background-color: #FA5858;
 }
+
 @media(max-width: 550px){
     #backimg1, #backimg2, #backimg3 {
         width: 100%;
@@ -148,7 +149,6 @@ body{
         height: auto;
         width: 100%;
     }
-
     .inner {
         margin-left: 8px;
         margin-top: 45px;
