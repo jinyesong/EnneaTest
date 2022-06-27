@@ -138,3 +138,39 @@ var sendKakao = function() {
 document.getElementById("kakaoShareBtn").addEventListener("click", function(){
   sendKakao();
 })
+
+if(isMobile()){
+  let loading = document.getElementById("loading_video");
+  loading.style.width = "100%";
+
+  let resultImg = document.getElementById("resultMainImg");
+  resultImg.style.width = "100%";
+  let secondImg = document.getElementById("second_Ennea");
+  let thirdImg = document.getElementById("third_Ennea");
+  secondImg.style.width = "25%";
+  thirdImg.style.width = "25%";
+  secondImg.style.top = "35%";
+  thirdImg.style.top = "35%";
+  secondImg.style.left = "32%";
+  thirdImg.style.left = "42%";
+  let bool1 = document.getElementById("boo1");
+  let bool2 = document.getElementById("boo2");
+  bool1.style.fontSize = "30px";
+  bool2.style.fontSize = "30px";
+  bool1.style.top = "45%";
+  bool2.style.top = "45%";
+  bool1.style.left = "32%";
+  bool2.style.left = "42%";
+  let name = document.getElementById("name");
+  name.style.fontSize = "40px";
+  name.style.top = "47%";
+
+  let kakaoShareBtn = document.getElementById("kakaoShareBtn");
+  let againBtn = document.getElementById("againBtn");
+}
+
+
+function isMobile() {
+  console.log(navigator.userAgent);
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
