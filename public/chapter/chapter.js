@@ -11,7 +11,7 @@ let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1)
 let progressBar;
 let heartPX = 5;
 if(chapterNum == 2){
-    if(isMobile()){
+    if(isMobile()=="true"){
         heartPX += 235;
     }
     else{
@@ -19,7 +19,7 @@ if(chapterNum == 2){
     }
 }
 else if(chapterNum == 3){
-    if(isMobile()){
+    if(isMobile()=="true"){
         heartPX += 480;
     }
     else{
@@ -29,7 +29,7 @@ else if(chapterNum == 3){
 $(".heartImg").css("left", heartPX+"px");
 let heartMoveNum = 20; //하트이미지 움직이는 정도
 
-if(isMobile()){
+if(isMobile()=="true"){
     console.log("yes it is mobile");
     let chapDiv = document.getElementById("chapterPage_"+chapterNum);
     chapDiv.style.width = "100%";
@@ -49,7 +49,7 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     
-    if(isMobile()) {
+    if(isMobile()=="true") {
         let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
         let bckimg = document.getElementById("backimg"+ chapterNum);
         bckimg.src = temp_url;
@@ -121,16 +121,18 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 heartPX += heartMoveNum;
                 $(".heartImg").css("left", heartPX+"px");
 
-                if(isMobile()) {
+                if(isMobile()=="true") {
                     console.log("yes it is mobile");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
                     document.getElementById("backimg"+ chapterNum).src = temp_url;
                 } else {
-                    console.log("desktop");
+                    console.log("desktop or iPad");
                     console.log(pageNum);
-                    console.log("why");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum +".png"
                     document.getElementById("backimg"+ chapterNum).src = temp_url;
+                    if (isMobile()=="iPad"){
+                        console.log("iPad");
+                    }
                 }
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
@@ -168,7 +170,19 @@ function checkEnnea_Nsum(chapter, question_num, val) {
 
 // 추가된 부분
 function isMobile() {
-    console.log(navigator.userAgent);
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    console.log("mobile?");
+    // ipad인지 확인하고 img 및 비율 변경
+    console.log(/iPad/i.test(navigator.userAgent));
+    if(/iPad/i.test(navigator.userAgent)) {
+        console.log(/iPad/i.test(navigator.userAgent));
+        document.getElementById("chapimg").style.height = "1380px"
+        console.log("mobile?");
+        document.getElementById("nextBtn").style.transform = "translate(160px, 430px)";
+        document.getElementById("nextBtn").style.width = "130px";
+        console.log("mobile?");
+        return "iPad";
+    }
+
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent).toString();
 }
 // 추가부분 끝
