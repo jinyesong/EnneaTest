@@ -8,7 +8,7 @@ let questionNum = 7; //일단 7이상으로 초기화
 let pageNum = 1; // chapter내의 page가 몇번째 페이지인지 저장. 일단 0으로 초기화
 let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1);
 //하트 위치 초기화
-let progressBar;
+let progressBar = document.getElementById("progress");;
 let inner = document.getElementsByClassName("inner");
 let heartPX = 5;
 if(chapterNum == 2){
@@ -61,7 +61,6 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
         heartImg.style.width = "100px";
-        progressBar = document.getElementById("progress");
         let progressDiv = document.getElementById("processBar");
         progressDiv.style.width = "90%";
         progressBar.style.width = "100%";
