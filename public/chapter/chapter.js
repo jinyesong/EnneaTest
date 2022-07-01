@@ -29,7 +29,7 @@ else if(chapterNum == 3){
 $(".heartImg").css("left", heartPX+"px");
 let heartMoveNum = 20; //하트이미지 움직이는 정도
 
-if(isMobile()){
+if(isMobile()=="true"){
     console.log("yes it is mobile");
     let chapDiv = document.getElementById("chapterPage_"+chapterNum);
     chapDiv.style.width = "100%";
@@ -42,20 +42,21 @@ if(isMobile()){
     let nextBtn = document.getElementById("nextBtn");
     nextBtn.style.width = "140px";
     nextBtn.style.right = "110px";
-    nextBtn.style.top = "77%"; 
+    nextBtn.style.top = "77%";
+    document.getElementsByTagName("body")[0].style.textAlign = "unset";
 }
 
 document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     
-    if(isMobile()) {
+    if(isMobile()=="true") {
         let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
-        let bckimg = document.getElementById("backimg"+ chapterNum);
-        bckimg.src = temp_url;
-        bckimg.style.width = "95%";
-        bckimg.style.height = "90%";
-        bckimg.style.marginTop = "50px";
+        // let bckimg = document.getElementById("backimg"+ chapterNum);
+        // bckimg.src = temp_url;
+        // bckimg.style.width = "95%";
+        // bckimg.style.height = "90%";
+        // bckimg.style.marginTop = "50px";
 
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
@@ -87,8 +88,12 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         console.log("change style 90%");
     } else {
         console.log("desktop");
-        let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
-        document.getElementById("backimg"+ chapterNum).src = temp_url;
+        var temp_h5 = document.getElementsByTagName("h5");
+        for (var i = 0; i < temp_h5.length; i ++) {
+            temp_h5[i].style.fontSize = "0.83em";
+        }
+        // let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
+        // document.getElementById("backimg"+ chapterNum).src = temp_url;
     }
 });
 
@@ -120,16 +125,18 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 heartPX += heartMoveNum;
                 $(".heartImg").css("left", heartPX+"px");
 
-                if(isMobile()) {
+                if(isMobile()=="true") {
                     console.log("yes it is mobile");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
-                    document.getElementById("backimg"+ chapterNum).src = temp_url;
+                    // document.getElementById("backimg"+ chapterNum).src = temp_url;
                 } else {
-                    console.log("desktop");
+                    console.log("desktop or iPad");
                     console.log(pageNum);
-                    console.log("why");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum +".png"
-                    document.getElementById("backimg"+ chapterNum).src = temp_url;
+                    // document.getElementById("backimg"+ chapterNum).src = temp_url;
+                    if (isMobile()=="iPad"){
+                        console.log("iPad");
+                    }
                 }
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
@@ -149,9 +156,9 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
 })
 
 chapter_enneaNum = {
-    1: [2, 3, 3, 3, 3, 3, 6, 5, 7, 7, 5, 7, 6, 5, 6, 6, 1, 9, 8, 9, 9, 9, 1],
-    2: [3, 2, 4, 2, 3, 2, 2, 3, 3, 2, 2, 5, 7, 6, 5, 6, 7, 7, 1, 9, 8, 8, 8, 8, 8, 1, 8],
-    3: [4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 7, 6, 5, 6, 5, 7, 5, 6, 7, 5, 8, 9, 8, 9, 1, 1, 1, 1, 9, 1, 9]
+    1: [2, 3, 6, 3, 9, 3, 6, 5, 7, 7, 5, 9, 6, 5, 3, 6, 1, 9, 8, 7, 3, 9, 1],
+    2: [3, 2, 8, 2, 3, 8, 2, 3, 8, 2, 2, 5, 8, 6, 5, 6, 7, 7, 1, 9, 8, 2, 4, 8, 7, 1, 3],
+    3: [4, 2, 4, 5, 1, 9, 2, 4, 7, 1, 7, 6, 5, 8, 4, 7, 5, 6, 4, 5, 8, 4, 6, 9, 4, 1, 4, 1, 9, 1, 9]
 }
 
 function checkEnnea_Nsum(chapter, question_num, val) {
@@ -167,7 +174,19 @@ function checkEnnea_Nsum(chapter, question_num, val) {
 
 // 추가된 부분
 function isMobile() {
-    console.log(navigator.userAgent);
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    console.log("mobile?");
+    // ipad인지 확인하고 img 및 비율 변경
+    console.log(/iPad/i.test(navigator.userAgent));
+    if(/iPad/i.test(navigator.userAgent)) {
+        console.log(/iPad/i.test(navigator.userAgent));
+        document.getElementById("chapimg").style.height = "1380px"
+        console.log("mobile?");
+        document.getElementById("nextBtn").style.transform = "translate(160px, 430px)";
+        document.getElementById("nextBtn").style.width = "130px";
+        console.log("mobile?");
+        return "iPad";
+    }
+
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent).toString();
 }
 // 추가부분 끝

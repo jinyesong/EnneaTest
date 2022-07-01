@@ -1,6 +1,11 @@
 html{
     height: 100%;
 }
+h5 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
 body{
     background-image: url("../image/background.png");;
     height: 100%;
@@ -12,17 +17,19 @@ body{
 .chapterPage{
     text-align: center;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%;
+    transform: translateX(-50%); */
 }
 #chapimg {
     margin: 0 auto;
     height: 720px;
 }
 .imgContainer {
-    width: 100%;
+    width: 85%;
+    height: 90%;
     width: auto;
     text-align: center;
+    background-color: #ffffff;
 }
 #backimg1, #backimg2, #backimg3 {
     height: 720px;
@@ -32,7 +39,7 @@ body{
 }
 #nextBtn{
     position: absolute;
-    right: 570px;
+    transform: translateX(-115px);
     top: 610px;
     cursor: pointer;
     width: 50px;
@@ -69,7 +76,7 @@ body{
     position: relative;
     top: 58px;
     /* margin-bottom: 80px; */
-    height: 104px;
+    height: 95px;
 }
 .questionSTR {
     font-size: 16px;

@@ -15,8 +15,8 @@
     #page_container{
         background-color: white;
         text-align: center;
-        margin: auto;
-        height: auto;
+        margin: 15px auto;
+        height: 95%;
         width: 40%;
     }
     #logoImg{
@@ -39,6 +39,7 @@
         height: 100%;
         display: none;
         justify-content: center;
+        position: relative;
     }
     #prologue video{
         justify-content: center;
@@ -48,13 +49,19 @@
     }
     .nextBtn {
         position: absolute;
-        right: 540px;
-        top: 650px;
+        top: 92%;
         cursor: pointer;
         display: none;
+        transform: translateX(330%);
     }
     .nextBtn img{
         width: 50px;
+    }
+    #mainGif {
+        width: 90%;
+    }
+    #start {
+        width: 90%;
     }
 }
 @media screen and (max-width:1199px) {
@@ -77,12 +84,13 @@
         background-color: white;
         text-align: center;
         width: 100%;
-        transform: translateY(20%);
+        /* transform: translateY(20%); */
     }
     #prologue{
         height: 100%;
         display: none;
         justify-content: center;
+        position: relative;
     }
     #prologue video{
         justify-content: center;
@@ -115,12 +123,13 @@
         background-color: white;
         text-align: center;
         width: 100%;
-        transform: translateY(20%);
+        /* transform: translateY(15%); */
     }
     #prologue{
         width: auto;
         display: none;
-        transform: translateY(20%);
+        position: relative;
+        /* transform: translateY(20%); */
     }
     #prologue video{
         justify-content: center;
@@ -129,11 +138,14 @@
         font-family: 'Hahmlet', serif;
     }
     #text4{
-        font-size: 30px;
+        font-size: 20px;
         display: inline-block;
     }
     #count{
         color: #81BEF7;
         font-size: 40px;
+    }
+    #video {
+        width: 100%;
     }
 }
