@@ -51,12 +51,12 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     
     if(isMobile()) {
-        let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
-        let bckimg = document.getElementById("backimg"+ chapterNum);
-        bckimg.src = temp_url;
-        bckimg.style.width = "95%";
-        bckimg.style.height = "90%";
-        bckimg.style.marginTop = "50px";
+        // let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
+        // let bckimg = document.getElementById("backimg"+ chapterNum);
+        // bckimg.src = temp_url;
+        // bckimg.style.width = "95%";
+        // bckimg.style.height = "90%";
+        // bckimg.style.marginTop = "50px";
 
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
@@ -88,9 +88,9 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         }
         console.log("change style 90%");
     } else {
-        console.log("desktop");
-        let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
-        document.getElementById("backimg"+ chapterNum).src = temp_url;
+        // console.log("desktop");
+        // let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
+        // document.getElementById("backimg"+ chapterNum).src = temp_url;
     }
 });
 
@@ -122,17 +122,18 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 heartPX += heartMoveNum;
                 $(".heartImg").css("left", heartPX+"px");
 
-                if(isMobile()) {
+                if(isMobile()=="true") {
                     console.log("yes it is mobile");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
-                    document.getElementById("backimg"+ chapterNum).src = temp_url;
-
+                    // document.getElementById("backimg"+ chapterNum).src = temp_url;
                 } else {
-                    console.log("desktop");
+                    console.log("desktop or iPad");
                     console.log(pageNum);
-                    console.log("why");
                     let temp_url = "../image/part" + chapterNum + "_00" + pageNum +".png"
-                    document.getElementById("backimg"+ chapterNum).src = temp_url;
+                    // document.getElementById("backimg"+ chapterNum).src = temp_url;
+                    if (isMobile()=="iPad"){
+                        console.log("iPad");
+                    }
                 }
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
@@ -152,9 +153,9 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
 })
 
 chapter_enneaNum = {
-    1: [2, 3, 3, 3, 3, 3, 6, 5, 7, 7, 5, 7, 6, 5, 6, 6, 1, 9, 8, 9, 9, 9, 1],
-    2: [3, 2, 4, 2, 3, 2, 2, 3, 3, 2, 2, 5, 7, 6, 5, 6, 7, 7, 1, 9, 8, 8, 8, 8, 8, 1, 8],
-    3: [4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 7, 6, 5, 6, 5, 7, 5, 6, 7, 5, 8, 9, 8, 9, 1, 1, 1, 1, 9, 1, 9]
+    1: [2, 3, 6, 3, 9, 3, 6, 5, 7, 7, 5, 9, 6, 5, 3, 6, 1, 9, 8, 7, 3, 9, 1],
+    2: [3, 2, 8, 2, 3, 8, 2, 3, 8, 2, 2, 5, 8, 6, 5, 6, 7, 7, 1, 9, 8, 2, 4, 8, 7, 1, 3],
+    3: [4, 2, 4, 5, 1, 9, 2, 4, 7, 1, 7, 6, 5, 8, 4, 7, 5, 6, 4, 5, 8, 4, 6, 9, 4, 1, 4, 1, 9, 1, 9]
 }
 
 function checkEnnea_Nsum(chapter, question_num, val) {

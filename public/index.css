@@ -13,7 +13,7 @@ body{
     text-align: center;
     margin: auto;
     height: auto;
-    width: 40%;
+    width: fit-content;
 }
 #logoImg{
     margin-top: 5px;
