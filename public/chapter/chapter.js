@@ -39,11 +39,11 @@ if(isMobile()){
     let chap_url = "../image/chapter" + chapterNum + "_mb.png";
     chapImg.src = chap_url;
     chapImg.style.width = "100%";
-    chapImg.style.height = "90%";
+    chapImg.style.height = "100%";
     let nextBtn = document.getElementById("nextBtn");
     nextBtn.style.width = "140px";
-    nextBtn.style.right = "110px";
-    nextBtn.style.top = "77%"; 
+    nextBtn.style.right = "10px";
+    nextBtn.style.top = "85%"; 
 }
 
 document.getElementById("nextBtn").addEventListener("click", function(){
@@ -51,12 +51,11 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     
     if(isMobile()) {
-        // let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
-        // let bckimg = document.getElementById("backimg"+ chapterNum);
-        // bckimg.src = temp_url;
-        // bckimg.style.width = "95%";
-        // bckimg.style.height = "90%";
-        // bckimg.style.marginTop = "50px";
+        let bckimg = document.getElementById("backimg"+ chapterNum);
+        bckimg.src = "../image/white_mb.png";
+        bckimg.style.width = "100%";
+        bckimg.style.height = "100%";
+        bckimg.style.top = "50%";
 
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
@@ -68,13 +67,18 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         progressBar.style.marginTop = "75px";
         heartMoveNum = 43;
 
+        var temp_h5 = document.getElementsByTagName("h5");
+        for (var i = 0; i < temp_h5.length; i ++) {
+            temp_h5[i].style.fontSize = "1.7em";
+        }
+
         let qbox = document.getElementsByClassName("questionBox");
         for ( let i = 0; i < qbox.length; i++) {
             qbox[i].style.height = "20%";
+            qbox[i].style.marginLeft = "20px";
         }
         let inr = document.getElementsByClassName("inner");
         for ( let i = 0; i < inr.length; i++) {
-            inr[i].style.marginTop = "10%";
             inr[i].style.height = "85%";
             inr[i].style.left = "47%";
         }
