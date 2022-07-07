@@ -7,8 +7,7 @@ body {
     justify-content: center;
     align-content: center;
 }
-.background_img {
-    margin: auto;
+#background_img {
     height: 100%;
 }
 #back {
@@ -41,42 +40,48 @@ p{
     width: fit-content;
     height: fit-content;
     cursor: pointer;
-    transform: translate(1120%, 450%);
+    top: 85%;
+    left: 80%;
+    /* transform: translate(1120%, 450%); */
 }
 .nextBtn img{
     width: 50px;
 }
 #inner {
-    margin: auto;
-    position: absolute;
-    width: 100%;
-    transform: translate(-35px,-50%);
+    margin: 0px auto;
+    position: relative;
+    width: fit-content;
+    /* transform: translate(-35px,-50%); */
     text-align: center;
+    height: 100%;
 }
 #nameBox{
     font-family: 'Hahmlet', serif;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
-    transform: translate(-10px);
-    top: 370px;
-    width: 100px;
-    height: 25px;
+    transform: translateX(-50%);
+    top: 53%;
+    left: 50%;
+    width: 13vh;
+    height: 4vh;
+    position: absolute;
     border: 0;
-    border-bottom: 4px solid rgb(95, 90, 90);
+    border-bottom: 3px solid rgb(95, 90, 90);
 }
 @media(max-width: 1023px){ /* 1023px 이하일 때(mobile) */
-    .background_img {
+    /* #background_img {
         margin: auto;
         width: 100%;
         height: auto;
     }
     #inner {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, 35%);
-    }
+        position: relative;
+        height: fit-content;
+        margin: auto;
+        width: 100%;
+    } */
     .nextBtn{
-        transform: translate(1250%, 800%);
+        /* transform: translate(1250%, 800%); */
         cursor: pointer;
     }
     .questionText{
@@ -86,14 +91,10 @@ p{
     }
     #nameBox{
         font-family: 'Jua', sans-serif;
-        font-size: 5vw;
-        width: 30vw;
-        height:8vw;
+        /* width: 30vw;
+        height:8vw; */
         text-align: center;
-        transform: translateY(3vw);
-    }
-    .nextBtn img{
-        width: 60px;
+        /* transform: translateY(3vw); */
     }
     #nextBtn2 {
         transform: translateY(69vw);

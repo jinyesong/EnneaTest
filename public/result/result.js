@@ -15,6 +15,16 @@ const character = [
     "사랑의 예스맨"
 ];
 
+if(isMobile()=="true") {
+  document.getElementById("loading").style.width = "100%";
+  document.getElementById("loading_video").style.width = "100%";
+  console.log("change video width");
+} else {
+  document.getElementById("loading").style.height = "100%";
+  document.getElementById("loading_video").style.heigth = "100%";
+  console.log("change video height");
+}
+
 for(let i=1; i<10; i++){
     let val = Number(sessionStorage.getItem(i));
     EnneaArr[i-1] = val;
@@ -137,4 +147,17 @@ var sendKakao = function() {
 
 document.getElementById("kakaoShareBtn").addEventListener("click", function(){
   sendKakao();
-})
+});
+
+function isMobile() {
+  console.log("mobile?");
+  // ipad인지 확인하고 img 및 비율 변경
+  console.log(/iPad/i.test(navigator.userAgent));
+  if(/iPad/i.test(navigator.userAgent)) {
+      console.log(/iPad/i.test(navigator.userAgent));
+      console.log("mobile?");
+      return "iPad";
+  }
+
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent).toString();
+}

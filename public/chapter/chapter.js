@@ -32,17 +32,18 @@ let heartMoveNum = 20; //하트이미지 움직이는 정도
 if(isMobile()=="true"){
     console.log("yes it is mobile");
     let chapDiv = document.getElementById("chapterPage_"+chapterNum);
-    chapDiv.style.width = "100%";
-    chapDiv.style.height = "100%";
+    chapDiv.style.width = "fit-content";
+    chapDiv.style.height = "fit-content";
+    chapDiv.style.top = "50%";
+    chapDiv.style.transform = "translateY(-50%)"
     let chapImg = document.getElementById("chapimg");
     let chap_url = "../image/chapter" + chapterNum + "_mb.png";
     chapImg.src = chap_url;
     chapImg.style.width = "100%";
-    chapImg.style.height = "90%";
+    chapImg.style.height = "auto";
     let nextBtn = document.getElementById("nextBtn");
     nextBtn.style.width = "140px";
     nextBtn.style.right = "110px";
-    nextBtn.style.top = "77%";
     document.getElementsByTagName("body")[0].style.textAlign = "unset";
 }
 
@@ -50,8 +51,8 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     
-    if(isMobile()=="true") {
-        let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
+    if(isMobile()=="true" || isMobile()=="iPad") {
+        // let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
         // let bckimg = document.getElementById("backimg"+ chapterNum);
         // bckimg.src = temp_url;
         // bckimg.style.width = "95%";
@@ -66,16 +67,17 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         progressBar.style.width = "100%";
         progressBar.style.height = "30px";
         progressBar.style.marginTop = "75px";
+        // progressBar.style.top = "10%";
         heartMoveNum = 43;
 
         let qbox = document.getElementsByClassName("questionBox");
         for ( let i = 0; i < qbox.length; i++) {
-            qbox[i].style.height = "290px";
+            qbox[i].style.height = "225px";
         }
         let inr = document.getElementsByClassName("inner");
         for ( let i = 0; i < inr.length; i++) {
-            inr[i].style.marginTop = "110px";
-            inr[i].style.left = "47.5%";
+            // inr[i].style.marginTop = "110px";
+            // inr[i].style.left = "47.5%";
         }
         for( let i = 1; i < 6; i++ ) {
             let chki = document.getElementsByClassName("check"+i);
@@ -91,6 +93,10 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         var temp_h5 = document.getElementsByTagName("h5");
         for (var i = 0; i < temp_h5.length; i ++) {
             temp_h5[i].style.fontSize = "0.83em";
+        }
+        var temp_h6 = document.getElementsByTagName("h6");
+        for (var i = 0; i < temp_h6.length; i ++) {
+            temp_h6[i].style.fontSize = "0.67em";
         }
         // let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
         // document.getElementById("backimg"+ chapterNum).src = temp_url;
@@ -147,9 +153,15 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
             document.getElementById("inner_"+innerPage).style.display = "block";
             // alert(questionNum);
             if (questionNum != 7) {
-                document.getElementById("inner_"+innerPage).style.left = "0%";
-                document.getElementById("inner_"+innerPage).style.position = "absolute";
-                document.getElementById("inner_"+innerPage).style.transform = "translateY(-320px)";                
+                document.getElementById("inner_"+innerPage).style.left = "50%";
+                document.getElementById("inner_"+innerPage).style.height = "80%";
+                console.log("go 80");
+                if(isMobile()=="true"){
+                    document.getElementById("inner_"+innerPage).style.height = "60%";
+                    console.log("mobile so go 60");
+                }
+                // document.getElementById("inner_"+innerPage).style.position = "absolute";
+                // document.getElementById("inner_"+innerPage).style.transform = "translateY(-320px)";                
             }
         }
     }
@@ -179,10 +191,10 @@ function isMobile() {
     console.log(/iPad/i.test(navigator.userAgent));
     if(/iPad/i.test(navigator.userAgent)) {
         console.log(/iPad/i.test(navigator.userAgent));
-        document.getElementById("chapimg").style.height = "1380px"
+        document.getElementById("chapimg").style.height = "100%"
         console.log("mobile?");
-        document.getElementById("nextBtn").style.transform = "translate(160px, 430px)";
-        document.getElementById("nextBtn").style.width = "130px";
+        document.getElementById("nextBtn").style.transform = "translateX(-60px)";
+        document.getElementById("nextBtn").style.width = "95px";
         console.log("mobile?");
         return "iPad";
     }

@@ -1,7 +1,18 @@
+html {
+    height: 100%;
+    width: 100%;
+}
 body{
     width: 100%;
+    height: 100%;
     background-color: #FFE6E2;
     text-align: center;
+}
+#loading {
+    height: 100%;
+}
+#loading_video {
+    height: 100%;
 }
 #resultImg{
     display: none;

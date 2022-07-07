@@ -5,6 +5,29 @@ h5 {
     margin: 0;
     margin-bottom: 10px;
     font-size: 1.6em;
+    text-align: left;
+}
+h6{
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    font-size: 1.3em;
+}
+.go_left {
+    text-align: left;
+    position: absolute;
+    padding-left: 30px;
+}
+.go_right {    
+    text-align: right;
+    position: absolute;
+    right: 30px;
+    width: 100%;
+    /* transform: translateY(-100%); */
+}
+.go_center {
+    transform: translateX(-50%);
+    right: 50%;
 }
 body{
     background-image: url("../image/background.png");;
@@ -17,12 +40,13 @@ body{
 .chapterPage{
     text-align: center;
     position: relative;
-    /* left: 50%;
-    transform: translateX(-50%); */
+    margin: 0 auto;
+    height: 100%;
+    width: fit-content;
 }
 #chapimg {
     margin: 0 auto;
-    height: 720px;
+    height: 100%;
 }
 .imgContainer {
     width: 85%;
@@ -39,8 +63,8 @@ body{
 }
 #nextBtn{
     position: absolute;
-    transform: translateX(-115px);
-    top: 610px;
+    top: 85%;
+    left: 80%;
     cursor: pointer;
     width: 50px;
 }
@@ -60,11 +84,15 @@ body{
 .inner{
     text-align: center;
     position: absolute;
-    width: 100%;
-    margin-left: 10px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    width: fit-content;
+    padding: 35px;
+    min-width: 400px;
+    min-height: 595px;
+    background-color: white;
+    /* margin-top: 5vmin; */
 }
 #inner_2, #inner_3, #inner_4, #inner_5, #inner_6, #inner_7{
     display: none;
@@ -74,7 +102,7 @@ body{
     padding-top: 15px;
     text-align: center;
     position: relative;
-    top: 58px;
+    top: 40px;
     /* margin-bottom: 80px; */
     height: 95px;
 }
