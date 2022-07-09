@@ -11,9 +11,8 @@ document.getElementById("nextBtn").addEventListener("click", function(){
 
 if(isMobile()=="true") {
     let bgi = document.getElementById("background_img");
-    bgi.style.margin = "auto";
+    bgi.src = "/image/nameGif_mb.gif";
     bgi.style.width = "100%";
-    bgi.style.height = "auto";
 
     let inn = document.getElementById("inner");
     inn.style.position = "relative";
