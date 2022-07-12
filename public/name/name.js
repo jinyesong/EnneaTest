@@ -21,7 +21,7 @@ if(isMobile()=="true") {
     inn.style.width = "100%";
 
     let nbi = document.getElementById("nextBtn_img");
-    nbi.style.width = "100px";
+    nbi.style.width = "140px";
 
     let nb = document.getElementById("nameBox");
     nb.style.fontSize = "5vw"

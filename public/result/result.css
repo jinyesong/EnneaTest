@@ -11,6 +11,9 @@ body{
 #loading {
     height: 100%;
 }
+#loadingGif{
+    height: 100%;
+}
 #resultImg{
     display: none;
     justify-content: center;

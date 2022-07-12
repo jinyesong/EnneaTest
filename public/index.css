@@ -9,7 +9,6 @@ body{
     align-items: center;
 }
 #page_container{
-    background-color: white;
     text-align: center;
     margin: 15px auto;
     display: flex;
@@ -18,6 +17,7 @@ body{
 }
 #inner_element_container {
     margin: auto;
+    background-color: white;
 }
 #logoImg{
     margin-top: 5px;
@@ -56,10 +56,10 @@ body{
     width: 50px;
 }
 #mainGif {
-    width: 48vh;
+    width: 60vh;
 }
 #start {
-    width: 48vh;
+    width: 60vh;
 }
 .font {
     font-family: 'Hahmlet', serif;

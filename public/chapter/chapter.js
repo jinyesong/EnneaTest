@@ -11,7 +11,7 @@ let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1)
 let progressBar = document.getElementById("progress");
 let heartPX = 5;
 if(chapterNum == 2){
-    if(isMobile()){
+    if(isMobile()==true){
         heartPX += 235;
     }
     else{
@@ -19,7 +19,7 @@ if(chapterNum == 2){
     }
 }
 else if(chapterNum == 3){
-    if(isMobile()){
+    if(isMobile()==true){
         heartPX += 480;
     }
     else{
@@ -54,13 +54,6 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     body.style.background = 'url("../image/background.png")';
 
     if(isMobile()=="true" || isMobile()=="iPad") {
-        // let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
-        // let bckimg = document.getElementById("backimg"+ chapterNum);
-        // bckimg.src = temp_url;
-        // bckimg.style.width = "95%";
-        // bckimg.style.height = "90%";
-        // bckimg.style.marginTop = "50px"; 
-
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
         heartImg.style.width = "100px";
