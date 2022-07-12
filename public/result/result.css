@@ -11,9 +11,6 @@ body{
 #loading {
     height: 100%;
 }
-#loading_video {
-    height: 100%;
-}
 #resultImg{
     display: none;
     justify-content: center;

@@ -15,16 +15,6 @@ const character = [
     "사랑의 예스맨"
 ];
 
-if(isMobile()=="true") {
-  document.getElementById("loading").style.width = "100%";
-  document.getElementById("loading_video").style.width = "100%";
-  console.log("change video width");
-} else {
-  document.getElementById("loading").style.height = "100%";
-  document.getElementById("loading_video").style.heigth = "100%";
-  console.log("change video height");
-}
-
 for(let i=1; i<10; i++){
     let val = Number(sessionStorage.getItem(i));
     EnneaArr[i-1] = val;
@@ -111,16 +101,48 @@ document.getElementById("againBtn").addEventListener("click", function(){
     sessionStorage.clear();
 })
 
-setInterval(function(){
-    if($("#loading_video").prop("ended")){
-      //영상종료 후 진행할 함수 입력부분
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("resultImg").style.display = "block";
-        document.getElementById("resultImg").style.display = "flex";
-        document.getElementById("btnContainer").style.display = "block";
-    }
-  },200);
-//0.2초마다 비디오의 속성 ended의 값이 무엇인지 검사한다
+if(isMobile()=="true") {
+  let loadingGif = document.getElementById("loadingGif");
+  loadingGif.src = "../image/loading_mb.gif";
+  loadingGif.style.width = "100%";
+  loadingGif.style.height = "100%";
+  let resultImgDiv = document.getElementById("resultImg");
+  resultImgDiv.style.width = "fit-content";
+  resultImgDiv.style.height = "fit-content";
+  resultImgDiv.style.position = "relative";
+  let resultImg = document.getElementById("resultMainImg");
+  resultImg.style.width = "100%";
+  let secondImg = document.getElementById("second_Ennea");
+  let thirdImg = document.getElementById("third_Ennea");
+  secondImg.style.width = "25%";
+  thirdImg.style.width = "25%";
+  secondImg.style.top = "28%";
+  thirdImg.style.top = "28%";
+  secondImg.style.left = "32%";
+  thirdImg.style.left = "42%";
+  let bool1 = document.getElementById("boo1");
+  let bool2 = document.getElementById("boo2");
+  bool1.style.fontSize = "30px";
+  bool2.style.fontSize = "30px";
+  bool1.style.top = "36%";
+  bool2.style.top = "36%";
+  bool1.style.left = "32%";
+  bool2.style.left = "42%";
+  let name = document.getElementById("name");
+  name.style.fontSize = "38px";
+  name.style.top = "38%";
+} else {
+  document.getElementById("loading").style.height = "100%";
+  document.getElementById("loading_video").style.heigth = "100%";
+  console.log("change video height");
+}
+
+setTimeout(function(){
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("resultImg").style.display = "block";
+  document.getElementById("resultImg").style.display = "flex";
+  document.getElementById("btnContainer").style.display = "block";
+},2000);
 
 //카카오 공유
 let ResultImg = 'http://localhost:5000/image/'+resultEnnea+'.png'; //왜 이미지가 안뜨지 곤란
