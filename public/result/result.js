@@ -133,7 +133,7 @@ if(isMobile()=="true") {
   name.style.top = "38%";
 } else {
   document.getElementById("loading").style.height = "100%";
-  document.getElementById("loading_video").style.heigth = "100%";
+  document.getElementById("loadingGif").style.heigth = "100%";
   console.log("change video height");
 }
 

@@ -1,6 +1,9 @@
 html{
     height: 100%;
 }
+body{
+    margin: 0;
+}
 h5 {
     margin: 0;
     margin-bottom: 10px;
