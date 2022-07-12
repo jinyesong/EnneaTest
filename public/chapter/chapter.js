@@ -32,7 +32,7 @@ let heartMoveNum = 20; //하트이미지 움직이는 정도
 if(isMobile()=="true"){
     console.log("yes it is mobile");
     let chapDiv = document.getElementById("chapterPage_"+chapterNum);
-    chapDiv.style.width = "fit-content";
+    chapDiv.style.width = "100%";
     chapDiv.style.height = "fit-content";
     chapDiv.style.top = "50%";
     chapDiv.style.transform = "translateY(-50%)"
@@ -50,6 +50,8 @@ if(isMobile()=="true"){
 document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
+    let body = document.getElementsByTagName("body")[0];
+    body.style.background = 'url("../image/background.png")';
 
     if(isMobile()=="true" || isMobile()=="iPad") {
         // let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
@@ -57,7 +59,7 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         // bckimg.src = temp_url;
         // bckimg.style.width = "95%";
         // bckimg.style.height = "90%";
-        // bckimg.style.marginTop = "50px";
+        // bckimg.style.marginTop = "50px"; 
 
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
