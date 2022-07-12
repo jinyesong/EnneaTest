@@ -11,7 +11,7 @@ let chapterNum = document.getElementsByClassName("chapterPage")[0].id.substr(-1)
 let progressBar = document.getElementById("progress");
 let heartPX = 5;
 if(chapterNum == 2){
-    if(isMobile()==true){
+    if(isMobile()=="true" || isMobile()=="iPad"){
         heartPX += 235;
     }
     else{
@@ -19,7 +19,7 @@ if(chapterNum == 2){
     }
 }
 else if(chapterNum == 3){
-    if(isMobile()==true){
+    if(isMobile()=="true" || isMobile()=="iPad"){
         heartPX += 480;
     }
     else{
@@ -48,11 +48,13 @@ if(isMobile()=="true"){
 }
 
 document.getElementById("nextBtn").addEventListener("click", function(){
+
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     let body = document.getElementsByTagName("body")[0];
     body.style.background = 'url("../image/background.png")';
 
+    let qbox = document.getElementsByClassName("questionBox");
     if(isMobile()=="true" || isMobile()=="iPad") {
         //하트바 모바일 초기화
         let heartImg = document.getElementById("heartImg"+chapterNum);
@@ -65,16 +67,18 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         // progressBar.style.top = "10%";
         heartMoveNum = 50;
 
-        let qbox = document.getElementsByClassName("questionBox");
-        for ( let i = 0; i < qbox.length; i++) {
-            qbox[i].style.height = "225px";
-            qbox[i].style.paddingBottom = "10px";
+        if(isMobile()=="iPad"){
+            for ( let i = 0; i < qbox.length; i++) {
+                qbox[i].style.height = "200px";
+                qbox[i].style.padding = "0";
+            }
+        }else{
+            for ( let i = 0; i < qbox.length; i++) {
+                qbox[i].style.height = "225px";
+                qbox[i].style.paddingBottom = "10px";
+            }
         }
         let inr = document.getElementsByClassName("inner");
-        for ( let i = 0; i < inr.length; i++) {
-            // inr[i].style.marginTop = "110px";
-            // inr[i].style.left = "47.5%";
-        }
         for( let i = 1; i < 6; i++ ) {
             let chki = document.getElementsByClassName("check"+i);
             for ( let j = 0; j < chki.length; j++) {
@@ -84,7 +88,8 @@ document.getElementById("nextBtn").addEventListener("click", function(){
             }
         }
         console.log("change style 90%");
-    } else {
+    } 
+    else {
         console.log("desktop");
         var temp_h5 = document.getElementsByTagName("h5");
         for (var i = 0; i < temp_h5.length; i ++) {
@@ -94,8 +99,6 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         for (var i = 0; i < temp_h6.length; i ++) {
             temp_h6[i].style.fontSize = "0.67em";
         }
-        // let temp_url = "../image/part" + chapterNum + "_00" + pageNum + ".png"
-        // document.getElementById("backimg"+ chapterNum).src = temp_url;
     }
 });
 
@@ -126,20 +129,6 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 progressBar.value = progressBar.value + 5.55;
                 heartPX += heartMoveNum;
                 $(".heartImg").css("left", heartPX+"px");
-
-                if(isMobile()=="true") {
-                    console.log("yes it is mobile");
-                    // let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
-                    // document.getElementById("backimg"+ chapterNum).src = temp_url;
-                } else {
-                    console.log("desktop or iPad");
-                    console.log(pageNum);
-                    let temp_url = "../image/part" + chapterNum + "_00" + pageNum +".png"
-                    // document.getElementById("backimg"+ chapterNum).src = temp_url;
-                    if (isMobile()=="iPad"){
-                        console.log("iPad");
-                    }
-                }
             }
             document.getElementById("inner_"+innerPage).style.display = "none";
             innerPage++;
@@ -155,9 +144,7 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 if(isMobile()=="true"){
                     document.getElementById("inner_"+innerPage).style.height = "60%";
                     console.log("mobile so go 60");
-                }
-                // document.getElementById("inner_"+innerPage).style.position = "absolute";
-                // document.getElementById("inner_"+innerPage).style.transform = "translateY(-320px)";                
+                }       
             }
         }
     }
@@ -180,21 +167,16 @@ function checkEnnea_Nsum(chapter, question_num, val) {
     }
 }
 
-// 추가된 부분
 function isMobile() {
-    console.log("mobile?");
     // ipad인지 확인하고 img 및 비율 변경
     console.log(/iPad/i.test(navigator.userAgent));
     if(/iPad/i.test(navigator.userAgent)) {
         console.log(/iPad/i.test(navigator.userAgent));
         document.getElementById("chapimg").style.height = "100%"
-        console.log("mobile?");
         document.getElementById("nextBtn").style.transform = "translateX(-60px)";
         document.getElementById("nextBtn").style.width = "95px";
-        console.log("mobile?");
         return "iPad";
     }
-
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent).toString();
 }
 // 추가부분 끝
