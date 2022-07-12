@@ -50,7 +50,7 @@ if(isMobile()=="true"){
 document.getElementById("nextBtn").addEventListener("click", function(){
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
-    
+
     if(isMobile()=="true" || isMobile()=="iPad") {
         // let temp_url = "../image/part" + chapterNum + "_001" + "_mb.png";
         // let bckimg = document.getElementById("backimg"+ chapterNum);
@@ -68,11 +68,12 @@ document.getElementById("nextBtn").addEventListener("click", function(){
         progressBar.style.height = "30px";
         progressBar.style.marginTop = "75px";
         // progressBar.style.top = "10%";
-        heartMoveNum = 43;
+        heartMoveNum = 50;
 
         let qbox = document.getElementsByClassName("questionBox");
         for ( let i = 0; i < qbox.length; i++) {
             qbox[i].style.height = "225px";
+            qbox[i].style.paddingBottom = "10px";
         }
         let inr = document.getElementsByClassName("inner");
         for ( let i = 0; i < inr.length; i++) {
@@ -133,7 +134,7 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
 
                 if(isMobile()=="true") {
                     console.log("yes it is mobile");
-                    let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
+                    // let temp_url = "../image/part" + chapterNum + "_00" + pageNum + "_mb.png"
                     // document.getElementById("backimg"+ chapterNum).src = temp_url;
                 } else {
                     console.log("desktop or iPad");
