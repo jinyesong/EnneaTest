@@ -47,20 +47,24 @@ db.collection("User").orderBy('time', 'desc').get().then((snapshot)=>{
 document.getElementById("searchBtn").addEventListener("click", function(){
     let searchDate = document.getElementById("dateSearchBox").value;
     let searchName = document.getElementById("nameSearchBox").value;
-    let tbodyRow = document.getElementById("tableBody").getElementsByTagName("tr");
+    //let tbodyRow = document.getElementById("tableBody").getElementsByTagName("tr");
     if(searchDate === "" && searchName !== ""){ //이름으로만 검색
-        // for(let i=0; i<tbodyRow.length; i++){
-        //     let td = tbodyRow[i].childNodes[1];
-        //     if(td !== searchName){
-        //         $("tbody tr").eq(i).remove();
-        //         i--;
-        //     }
-        // }
+        $("#tableBody").empty(); //테이블 비우기
+        for(let i=0; i<getArr.length; i++){
+            if(getArr[i][1].includes(searchName)){ //왜 오류가날까->null문자열때문이었음
+                let TR = document.createElement("tr");
+                for(let j=0; j<11; j++){
+                    let TD = document.createElement("td");
+                    TD.innerHTML = getArr[i][j];
+                    TR.appendChild(TD);
+                }
+                document.getElementById("tableBody").appendChild(TR);
+            }
+        }
     }
     else if(searchName === "" && searchDate !== ""){ //날짜로만 검색
         $("#tableBody").empty(); //테이블 비우기
         console.log(searchDate) //2022-07-19 형식
-
         for(let i=0; i<getArr.length; i++){
             if(getArr[i][0].substr(0,10) == searchDate){
                 let TR = document.createElement("tr");
@@ -74,7 +78,18 @@ document.getElementById("searchBtn").addEventListener("click", function(){
         }
     }
     else if(searchName !== "" && searchDate !== ""){ //둘다 검색
-        
+        $("#tableBody").empty(); //테이블 비우기
+        for(let i=0; i<getArr.length; i++){
+            if(getArr[i][0].substr(0,10) == searchDate && getArr[i][1].includes(searchName)){
+                let TR = document.createElement("tr");
+                for(let j=0; j<11; j++){
+                    let TD = document.createElement("td");
+                    TD.innerHTML = getArr[i][j];
+                    TR.appendChild(TD);
+                }
+                document.getElementById("tableBody").appendChild(TR);
+            }
+        }
     }
     else{
         alert("날짜 혹은 이름을 입력해주세요.")
