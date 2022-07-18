@@ -161,7 +161,7 @@ var sendKakao = function() {
     templateId: 78079, // 메시지템플릿 번호
     templateArgs: {
       //img: ResultImg, // 결과 이미지 주소 ${img}
-      name: n, //사용자 이름 ${name}
+      name: sessionStorage.getItem("name"), //사용자 이름 ${name}
       main: ResultText, // 본캐 이름 텍스트 ${main}
       sub_1: SubText1, // 부캐 이름 텍스트 ${sub_1}
       sub_2: SubText2 // 부캐 이름 텍스트 ${sub_2}
