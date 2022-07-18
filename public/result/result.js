@@ -29,6 +29,9 @@ sortable.sort(function(a, b) {
   return a[1] - b[1];
 });
 
+calcEnnea_Nsum();
+console.log("calc N sum");
+
 // 1 2 3위 애니어 숫자 불러오기
 resultEnnea = sortable[8][0];
 Ennea2nd = sortable[7][0];
@@ -170,6 +173,27 @@ var sendKakao = function() {
 document.getElementById("kakaoShareBtn").addEventListener("click", function(){
   sendKakao();
 });
+
+function calcEnnea_Nsum() {
+  console.log("enter!");
+  for(var ennea = 1; ennea < 10; ennea++ ){
+      sessionStorage.setItem(ennea, 0);
+  }
+  for(var ennea = 1; ennea < 10; ennea++ ){
+      chapter = 1;
+      session_key = chapter + "_" + ennea;
+      if(sessionStorage.getItem(session_key) === "null"){
+          alert("error : session storage has no data of" + session_key);
+      }
+      else{
+          console.log(ennea);
+          console.log(sessionStorage.getItem(1 + "_" + ennea) + " + " + sessionStorage.getItem(2 + "_" + ennea) + " + " + sessionStorage.getItem(3 + "_" + ennea));
+          val = Number(sessionStorage.getItem(1 + "_" + ennea)) + Number(sessionStorage.getItem(2 + "_" + ennea)) + Number(sessionStorage.getItem(3 + "_" + ennea));   
+          console.log(val);
+      }
+      sessionStorage.setItem(ennea, val);
+  }
+}
 
 function isMobile() {
   console.log("mobile?");

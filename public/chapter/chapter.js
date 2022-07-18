@@ -48,7 +48,8 @@ if(isMobile()=="true"){
 }
 
 document.getElementById("nextBtn").addEventListener("click", function(){
-
+    
+    resetEnnea_Nsum(chapterNum);
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
     let body = document.getElementsByTagName("body")[0];
@@ -156,8 +157,14 @@ chapter_enneaNum = {
     3: [4, 2, 4, 5, 1, 9, 2, 4, 7, 1, 7, 6, 5, 8, 4, 7, 5, 6, 4, 5, 8, 4, 6, 9, 4, 1, 4, 1, 9, 1, 9]
 }
 
+function resetEnnea_Nsum(chapter) {
+    for(var ennea = 1; ennea < 10; ennea++ ){
+        sessionStorage.setItem(chapter + "_" + ennea, 0);
+    }
+}
+
 function checkEnnea_Nsum(chapter, question_num, val) {
-    session_key = chapter_enneaNum[chapter][question_num-1];
+    session_key = chapter + "_" + chapter_enneaNum[chapter][question_num-1];
     if(sessionStorage.getItem(session_key) === "null"){
         sessionStorage.setItem(session_key, val);
     }
