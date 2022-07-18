@@ -10,7 +10,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-db.collection("User").get().then((snapshot)=>{
+let getArr = new Array(); //처음에 목록을 받아와서 이후에 검색할 때 또 받아오지 않도록 저장해두는 배열
+db.collection("User").orderBy('time', 'desc').get().then((snapshot)=>{
     snapshot.forEach((doc)=>{
         let arr = new Array(11);
         let date = new Date(doc.data().time*1000);
@@ -31,6 +32,7 @@ db.collection("User").get().then((snapshot)=>{
         arr[9] = doc.data().eight;
         arr[10] = doc.data().nine;
 
+        getArr.push(arr);
         let TR = document.createElement("tr");
         for(let i=0; i<11; i++){
             let TD = document.createElement("td");
@@ -56,7 +58,20 @@ document.getElementById("searchBtn").addEventListener("click", function(){
         // }
     }
     else if(searchName === "" && searchDate !== ""){ //날짜로만 검색
-        
+        $("#tableBody").empty(); //테이블 비우기
+        console.log(searchDate) //2022-07-19 형식
+
+        for(let i=0; i<getArr.length; i++){
+            if(getArr[i][0].substr(0,10) == searchDate){
+                let TR = document.createElement("tr");
+                for(let j=0; j<11; j++){
+                    let TD = document.createElement("td");
+                    TD.innerHTML = getArr[i][j];
+                    TR.appendChild(TD);
+                }
+                document.getElementById("tableBody").appendChild(TR);
+            }
+        }
     }
     else if(searchName !== "" && searchDate !== ""){ //둘다 검색
         

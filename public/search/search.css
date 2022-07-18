@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-color: #fff;
+    background-image: url("../image/background.png");
 }
 #container{
     text-align: center;
@@ -10,11 +10,13 @@ body{
 }
 #searchBtn{
     margin-top: 5px;
+    font-family: 'Hahmlet', serif;
 }
 #enneaTable{
     margin: 20px auto;
     border: 1px solid black;
     border-collapse: collapse;
+    font-family: 'Hahmlet', serif;
 }
 #enneaTable th, td{
     border: 1px solid black;
@@ -22,5 +24,11 @@ body{
     padding: 5px 10px;
 }
 #enneaTable td{
+    background-color: white;
+}
+#enneaTable th{
     background-color: whitesmoke;
+}
+label{
+    font-family: 'Hahmlet', serif;
 }

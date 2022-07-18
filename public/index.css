@@ -13,7 +13,6 @@ body{
     margin: 15px auto;
     display: flex;
     height: 95%;
-    width: 50%;
 }
 #inner_element_container {
     margin: auto;

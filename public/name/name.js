@@ -34,14 +34,9 @@ if(isMobile()=="iPad") {
 }
 
 function isMobile() {
-    console.log("mobile?");
     // ipad인지 확인하고 img 및 비율 변경
-    console.log(/iPad/i.test(navigator.userAgent));
     if(/iPad/i.test(navigator.userAgent)) {
-        console.log(/iPad/i.test(navigator.userAgent));
-        console.log("mobile?");
         return "iPad";
     }
-
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent).toString();
 }

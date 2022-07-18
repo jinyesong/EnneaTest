@@ -5,7 +5,7 @@ document.getElementById("openBtn").addEventListener("click", function(){
     document.getElementById("prologue").style.display = "flex";
 });
 
-if(isMobile()){
+if(isMobile()=="true"){
   //시작페이지
   let mainDiv = document.getElementById("page_container");
   mainDiv.style.width = "100%";
@@ -22,8 +22,14 @@ if(isMobile()){
   btn.style.top = "90%";
   btn.style.left = "80%";
 }
-
+if(isMobile()=="iPad") {
+  let nbi = document.getElementById("nextBtn_img");
+  nbi.style.width = "100px";
+}
 function isMobile() {
-  console.log(navigator.userAgent);
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  // ipad인지 확인하고 img 및 비율 변경
+  if(/iPad/i.test(navigator.userAgent)) {
+      return "iPad";
+  }
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent).toString();
 }

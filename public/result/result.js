@@ -159,10 +159,10 @@ if (!Kakao.isInitialized()) { // init 체크
 var sendKakao = function() {
   // 메시지 공유 함수
   Kakao.Link.sendScrap({
-    requestUrl: 'http://localhost:5000/result/result.html', // 페이지 url
+    requestUrl: 'https://enneatest-b7cc9.web.app/result/result.html', // 페이지 url
     templateId: 78079, // 메시지템플릿 번호
     templateArgs: {
-      img: ResultImg, // 결과 이미지 주소 ${img}
+      //img: ResultImg, // 결과 이미지 주소 ${img}
       main: ResultText, // 본캐 이름 텍스트 ${main}
       sub_1: SubText1, // 부캐 이름 텍스트 ${sub_1}
       sub_2: SubText2 // 부캐 이름 텍스트 ${sub_2}
