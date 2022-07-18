@@ -15,10 +15,9 @@ const character = [
     "사랑의 예스맨"
 ];
 
-for(let i=1; i<10; i++){
-    let val = Number(sessionStorage.getItem(i));
-    EnneaArr[i-1] = val;
-}
+calcEnnea_Nsum();
+console.log("calc N sum");
+
 var sortable = [];
 var temp = 1;
 for (var name in EnneaArr) {
@@ -28,9 +27,6 @@ for (var name in EnneaArr) {
 sortable.sort(function(a, b) {
   return a[1] - b[1];
 });
-
-calcEnnea_Nsum();
-console.log("calc N sum");
 
 // 1 2 3위 애니어 숫자 불러오기
 resultEnnea = sortable[8][0];
@@ -68,7 +64,8 @@ var n = document.getElementById("name");
 n.textContent = sessionStorage.getItem("name") + "님을 위한 연애 비책";
 
 // DB저장(name, date, ennea_result)
-const firebaseConfig = {
+function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호출하도록 수정
+  const firebaseConfig = {
     apiKey: "AIzaSyAETLy6EubnWcv2NARqyEKLIfC-rRBin3w",
     authDomain: "enneatest-b7cc9.firebaseapp.com",
     projectId: "enneatest-b7cc9",
@@ -77,10 +74,10 @@ const firebaseConfig = {
     appId: "1:918072804291:web:52953c709becdbe7cfb376"
   };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
 
-let data = {
+  let data = {
     name: sessionStorage.getItem("name"),
     time : new Date(),
     one: EnneaArr[0],
@@ -92,12 +89,13 @@ let data = {
     seven: EnneaArr[6],
     eight: EnneaArr[7],
     nine: EnneaArr[8]
+  }
+  db.collection("User").add(data).then((result) => {
+      console.log("디비 저장!");
+  }).catch((err) => {
+      console.log("저장 실패" + err);
+  });
 }
-db.collection("User").add(data).then((result) => {
-    console.log("디비 저장!");
-}).catch((err) => {
-    console.log("저장 실패" + err);
-});
 
 //다시하기 버튼
 document.getElementById("againBtn").addEventListener("click", function(){
@@ -163,6 +161,7 @@ var sendKakao = function() {
     templateId: 78079, // 메시지템플릿 번호
     templateArgs: {
       //img: ResultImg, // 결과 이미지 주소 ${img}
+      name: n, //사용자 이름 ${name}
       main: ResultText, // 본캐 이름 텍스트 ${main}
       sub_1: SubText1, // 부캐 이름 텍스트 ${sub_1}
       sub_2: SubText2 // 부캐 이름 텍스트 ${sub_2}
@@ -192,7 +191,10 @@ function calcEnnea_Nsum() {
           console.log(val);
       }
       sessionStorage.setItem(ennea, val);
+      EnneaArr[ennea-1] = val;
   }
+
+  saveDB();
 }
 
 function isMobile() {
