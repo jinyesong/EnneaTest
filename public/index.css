@@ -10,9 +10,8 @@ body{
 }
 #page_container{
     text-align: center;
-    margin: 15px auto;
     display: flex;
-    height: 95%;
+    height: 100%;
 }
 #inner_element_container {
     margin: auto;
