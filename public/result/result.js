@@ -88,7 +88,8 @@ function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호�
     six: EnneaArr[5],
     seven: EnneaArr[6],
     eight: EnneaArr[7],
-    nine: EnneaArr[8]
+    nine: EnneaArr[8],
+    allScore: sessionStorage.getItem("1_allScore")+" "+sessionStorage.getItem("2_allScore")+" "+sessionStorage.getItem("3_allScore")
   }
   db.collection("User").add(data).then((result) => {
       console.log("디비 저장!");

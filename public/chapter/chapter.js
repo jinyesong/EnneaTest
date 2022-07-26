@@ -48,7 +48,6 @@ if(isMobile()=="true"){
 }
 
 document.getElementById("nextBtn").addEventListener("click", function(){
-    
     resetEnnea_Nsum(chapterNum);
     document.getElementById("back"+ chapterNum).style.display = "block";
     document.getElementsByClassName("chapterPage")[0].style.display = "none";
@@ -111,8 +110,8 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
 
         if(!isTrue.includes(0)){ //라디오버튼이 모두 체크되었을 때
             //세션스토리지에 저장
-            for(let i=0; i<questionNum-2; i++){
-                let QNum = (innerPage-1)*5 + i + 1;
+            for(let i=0; i<questionNum-2; i++){ //questionNum: 한페이지에 있는 질문의 개수 + 2
+                let QNum = (innerPage-1)*5 + i + 1; //QNum: 실제 질문에 부여된 번호
                 checkEnnea_Nsum(chapterNum, QNum, isTrue[i]);
             }
             pageNum = pageNum + 1
@@ -160,6 +159,7 @@ chapter_enneaNum = {
 function resetEnnea_Nsum(chapter) {
     for(var ennea = 1; ennea < 10; ennea++ ){
         sessionStorage.setItem(chapter + "_" + ennea, 0);
+        sessionStorage.setItem(chapter+"_allScore", "");
     }
 }
 
@@ -169,8 +169,17 @@ function checkEnnea_Nsum(chapter, question_num, val) {
         sessionStorage.setItem(session_key, val);
     }
     else{
-        val = Number(sessionStorage.getItem(session_key)) + Number(val);
-        sessionStorage.setItem(session_key, val);
+        let sum_val = Number(sessionStorage.getItem(session_key)) + Number(val);
+        sessionStorage.setItem(session_key, sum_val);
+    }
+
+    //챕터별 전체 질문 점수 session 누적 추가
+    if(sessionStorage.getItem(chapter+"_allScore") === ""){
+        sessionStorage.setItem(chapter+"_allScore", val);
+    }
+    else{
+        let new_string = sessionStorage.getItem(chapter+"_allScore") + " " + val;
+        sessionStorage.setItem(chapter+"_allScore", new_string);
     }
 }
 
