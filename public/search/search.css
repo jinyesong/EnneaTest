@@ -1,4 +1,8 @@
+html{
+    height: 100%;
+}
 body{
+    height: 100%;
     text-align: center;
     background-image: url("../image/background.png");
 }
@@ -31,4 +35,12 @@ body{
 }
 label{
     font-family: 'Hahmlet', serif;
+}
+#popupContainer{
+    display: none;
+    position: absolute;
+    overflow: scroll;
+    background-color: #fff1ee;
+    height: 80%;
+    width: 80%;
 }
