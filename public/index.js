@@ -58,10 +58,9 @@ db.collection("NumberOfParticipants").get().then((snapshot)=>{
   snapshot.forEach((doc)=>{
     firebaseCount = doc.data().count;
     let htmlCount = document.getElementById("count");
-    htmlCount.innerHTML = firebaseCount+7656;
+    htmlCount.innerHTML = Number(firebaseCount)+7656;
   })
 });
-
 
 // nextBtn 클릭시 prologue페이지 등장 및 참여자 수 증가
 document.getElementById("openBtn").addEventListener("click", function(){
@@ -70,7 +69,7 @@ document.getElementById("openBtn").addEventListener("click", function(){
   document.getElementById("prologue").style.display = "flex";
 
   let data = {
-    count : firebaseCount+1
+    count : Number(firebaseCount)+1
   }
 
   db.collection("NumberOfParticipants").doc("Count").update(data).then((result) => {

@@ -216,8 +216,6 @@ document.getElementById("tableBody").addEventListener("click", function(e){
     console.log(e.target.className);
     console.log(e.target.name);
     if(e.target.className == "title"){
-        document.getElementById("popupContainer").style.display = "block";
-
         allScoreList = e.target.getAttribute("data-allScore").split(" ");
         if (allScoreList.length < 2) {
             // 과거 데이터를 누르면 맨 위에만 undifined로 뜨는데 딱히 고칠 필요를 못느껴서 둠.
@@ -227,8 +225,11 @@ document.getElementById("tableBody").addEventListener("click", function(e){
             }
             alert("저장된 세부 항목별 애니어가 없는 데이터입니다");
         }
-        for ( var i = 0; i < allScoreList.length; i++) {
-            document.getElementsByClassName("popup_score")[i].innerHTML = " :  " + allScoreList[i];
+        else{
+            document.getElementById("popupContainer").style.display = "block";
+            for ( var i = 0; i < allScoreList.length; i++) {
+                document.getElementsByClassName("popup_score")[i].innerHTML = " :  " + allScoreList[i];
+            }
         }
     }
 });
