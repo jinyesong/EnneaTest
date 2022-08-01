@@ -98,11 +98,6 @@ function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호�
   });
 }
 
-//다시하기 버튼
-document.getElementById("againBtn").addEventListener("click", function(){
-    sessionStorage.clear();
-})
-
 if(isMobile()=="true") {
   let loadingGif = document.getElementById("loadingGif");
   loadingGif.src = "../image/loading_mb.gif";

@@ -64,6 +64,7 @@ db.collection("NumberOfParticipants").get().then((snapshot)=>{
 
 // nextBtn 클릭시 prologue페이지 등장 및 참여자 수 증가
 document.getElementById("openBtn").addEventListener("click", function(){
+  sessionStorage.clear();
   document.getElementById("page_container").style.display = "none";
   document.getElementById("prologue").style.display = "block";
   document.getElementById("prologue").style.display = "flex";
