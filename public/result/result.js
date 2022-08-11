@@ -169,6 +169,10 @@ document.getElementById("kakaoShareBtn").addEventListener("click", function(){
   sendKakao();
 });
 
+document.getElementById("againBtn").addEventListener("click", function(){
+  location.replace("../index.html");
+});
+
 function calcEnnea_Nsum() {
   console.log("enter!");
   for(var ennea = 1; ennea < 10; ennea++ ){

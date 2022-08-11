@@ -62,21 +62,26 @@ db.collection("NumberOfParticipants").get().then((snapshot)=>{
   })
 });
 
-// nextBtn 클릭시 prologue페이지 등장 및 참여자 수 증가
 document.getElementById("openBtn").addEventListener("click", function(){
   sessionStorage.clear();
   document.getElementById("page_container").style.display = "none";
   document.getElementById("prologue").style.display = "block";
   document.getElementById("prologue").style.display = "flex";
 
-  let data = {
-    count : Number(firebaseCount)+1
+  if(firebaseCount != "NaN"){ //NaN가 아닐 때만 갱신
+    let data = {
+      count : Number(firebaseCount)+1
+    }
+  
+    db.collection("NumberOfParticipants").doc("Count").update(data).then((result) => {
+      console.log("디비 저장!");
+      }).catch((err) => {
+      console.log("저장 실패" + err);
+    });
   }
 
-  db.collection("NumberOfParticipants").doc("Count").update(data).then((result) => {
-    console.log("디비 저장!");
-    }).catch((err) => {
-    console.log("저장 실패" + err);
-  });
+});
 
+document.getElementById("nextBtn").addEventListener("click", function(){
+  location.href = "/name/name.html";
 });

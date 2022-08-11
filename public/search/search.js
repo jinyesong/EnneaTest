@@ -1,3 +1,10 @@
+while(pw = prompt("비밀번호를 입력해주세요")){
+    if(pw == 'eogkrqn'){
+        break;
+    }
+    alert("비밀번호가 일치하지 않습니다");
+}
+
 const firebaseConfig = {
     apiKey: "AIzaSyAETLy6EubnWcv2NARqyEKLIfC-rRBin3w",
     authDomain: "enneatest-b7cc9.firebaseapp.com",

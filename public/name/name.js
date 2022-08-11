@@ -5,7 +5,7 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     }
     else{
         sessionStorage.setItem("name", document.getElementById("nameBox").value);
-        location.href = "../chapter/chapter1.html";
+        location.replace("../chapter/chapter1.html");
     }
 });
 
