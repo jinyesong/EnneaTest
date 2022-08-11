@@ -123,7 +123,7 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
                 }
                 else{
                     chapterNum++;
-                    location.href = "chapter" + chapterNum + ".html";
+                    location.replace("chapter" + chapterNum + ".html");
                 }
             } else { // inner가 마지막이 아닐때
                 //하트바 게이지 증가
