@@ -54,12 +54,10 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 let firebaseCount;
-db.collection("NumberOfParticipants").get().then((snapshot)=>{
-  snapshot.forEach((doc)=>{
+db.collection("NumberOfParticipants").doc("Count").get().then((doc)=>{
     firebaseCount = doc.data().count;
     let htmlCount = document.getElementById("count");
     htmlCount.innerHTML = Number(firebaseCount)+7656;
-  })
 });
 
 document.getElementById("openBtn").addEventListener("click", function(){
