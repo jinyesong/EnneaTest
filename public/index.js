@@ -68,7 +68,7 @@ document.getElementById("openBtn").addEventListener("click", function(){
   document.getElementById("prologue").style.display = "block";
   document.getElementById("prologue").style.display = "flex";
 
-  if(firebaseCount != "NaN"){ //NaN가 아닐 때만 갱신
+  if(!isNaN(firebaseCount)){ //NaN가 아닐 때만 갱신
     let data = {
       count : Number(firebaseCount)+1
     }
