@@ -118,11 +118,12 @@ document.getElementById("back"+ chapterNum).addEventListener("click", function(e
             if(questionNum < 7){ //마지막 inner일때
                 if(chapterNum == 3){
                     //결과페이지로 이동
-                    location.href = "../result/result.html";
+                    location.replace("../result/result.html");
+                    // location.href = "../result/result.html";
                 }
                 else{
                     chapterNum++;
-                    location.href = "chapter" + chapterNum + ".html";
+                    location.replace("chapter" + chapterNum + ".html");
                 }
             } else { // inner가 마지막이 아닐때
                 //하트바 게이지 증가

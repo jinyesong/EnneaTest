@@ -33,6 +33,10 @@ body{
     display: inline-block;
     cursor: pointer;
 }
+#againBtn{
+    display: inline-block;
+    cursor: pointer;
+}
 #second_Ennea {
     position: absolute;
     top: 550px;
