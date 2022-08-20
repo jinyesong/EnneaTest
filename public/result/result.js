@@ -1,3 +1,16 @@
+// 뒤로가기를 막는 코드
+// history.pushState(null, null, location.href);
+// window.onpopstate = function () {
+//         history.go(1);
+// };
+window.onpageshow = function(event) {
+  if (event.persisted) {
+  // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+  alert("히스토리백!!!!");
+  history.pushState(null, null, location.href);
+  history.go(1);
+  }
+}
 let max = 0;
 let EnneaArr = new Array(9);
 let resultEnnea;
@@ -61,7 +74,7 @@ boo = document.getElementById("boo2");
 boo.textContent = boo.textContent + character[sortable[6][0]-1];
 
 var n = document.getElementById("name");
-n.textContent = sessionStorage.getItem("name") + "님을 위한 연애 비책";
+n.textContent = localStorage.getItem("name") + "님을 위한 연애 비책";
 
 // DB저장(name, date, ennea_result)
 function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호출하도록 수정
@@ -78,7 +91,7 @@ function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호�
   const db = firebase.firestore();
 
   let data = {
-    name: sessionStorage.getItem("name"),
+    name: localStorage.getItem("name"),
     time : new Date(),
     one: EnneaArr[0],
     two: EnneaArr[1],
@@ -89,7 +102,7 @@ function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호�
     seven: EnneaArr[6],
     eight: EnneaArr[7],
     nine: EnneaArr[8],
-    allScore: sessionStorage.getItem("1_allScore")+" "+sessionStorage.getItem("2_allScore")+" "+sessionStorage.getItem("3_allScore")
+    allScore: localStorage.getItem("1_allScore")+" "+localStorage.getItem("2_allScore")+" "+localStorage.getItem("3_allScore")
   }
   db.collection("User").add(data).then((result) => {
       console.log("디비 저장!");
@@ -100,7 +113,7 @@ function saveDB(){ //calcEnnea_Nsum에서 에니어 계산을 끝낸 뒤에 호�
 
 //다시하기 버튼
 document.getElementById("againBtn").addEventListener("click", function(){
-    sessionStorage.clear();
+    localStorage.clear();
 })
 
 if(isMobile()=="true") {
@@ -162,7 +175,7 @@ var sendKakao = function() {
     templateId: 78079, // 메시지템플릿 번호
     templateArgs: {
       //img: ResultImg, // 결과 이미지 주소 ${img}
-      name: sessionStorage.getItem("name"), //사용자 이름 ${name}
+      name: localStorage.getItem("name"), //사용자 이름 ${name}
       main: ResultText, // 본캐 이름 텍스트 ${main}
       sub_1: SubText1, // 부캐 이름 텍스트 ${sub_1}
       sub_2: SubText2 // 부캐 이름 텍스트 ${sub_2}
@@ -176,26 +189,36 @@ document.getElementById("kakaoShareBtn").addEventListener("click", function(){
 
 function calcEnnea_Nsum() {
   console.log("enter!");
+  var error_noData = false;
   for(var ennea = 1; ennea < 10; ennea++ ){
-      sessionStorage.setItem(ennea, 0);
+      localStorage.setItem(ennea, 0);
   }
   for(var ennea = 1; ennea < 10; ennea++ ){
       chapter = 1;
       session_key = chapter + "_" + ennea;
-      if(sessionStorage.getItem(session_key) === "null"){
-          alert("error : session storage has no data of" + session_key);
+      if(localStorage.getItem(session_key) == null){
+          console.log("error : session storage has no data of" + session_key);
+          error_noData = null;
+          break;
       }
       else{
+          console.log(localStorage.getItem(session_key));
           console.log(ennea);
-          console.log(sessionStorage.getItem(1 + "_" + ennea) + " + " + sessionStorage.getItem(2 + "_" + ennea) + " + " + sessionStorage.getItem(3 + "_" + ennea));
-          val = Number(sessionStorage.getItem(1 + "_" + ennea)) + Number(sessionStorage.getItem(2 + "_" + ennea)) + Number(sessionStorage.getItem(3 + "_" + ennea));   
+          console.log(localStorage.getItem(1 + "_" + ennea) + " + " + localStorage.getItem(2 + "_" + ennea) + " + " + localStorage.getItem(3 + "_" + ennea));
+          val = Number(localStorage.getItem(1 + "_" + ennea)) + Number(localStorage.getItem(2 + "_" + ennea)) + Number(localStorage.getItem(3 + "_" + ennea));   
           console.log(val);
+          localStorage.setItem(ennea, val);
+          EnneaArr[ennea-1] = val;
       }
-      sessionStorage.setItem(ennea, val);
-      EnneaArr[ennea-1] = val;
   }
-
-  saveDB();
+  console.log(error_noData);
+  console.log(!error_noData);
+  if(error_noData) {
+    saveDB();
+    console.log("sendDB 함수 실행 완료");
+  } else {
+    console.log("sendDB 함수 실행 안함");
+  }
 }
 
 function isMobile() {
