@@ -1,16 +1,3 @@
-// 뒤로가기를 막는 코드
-// history.pushState(null, null, location.href);
-// window.onpopstate = function () {
-//         history.go(1);
-// };
-window.onpageshow = function(event) {
-  if (event.persisted) {
-  // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
-  alert("히스토리백!!!!");
-  history.pushState(null, null, location.href);
-  history.go(1);
-  }
-}
 let max = 0;
 let EnneaArr = new Array(9);
 let resultEnnea;
@@ -68,7 +55,6 @@ document.getElementById("resultImg").appendChild(resultImg);
 
 // 부캐1 부캐2 텍스트 추가 
 var boo = document.getElementById("boo1");
-console.log(sortable[7][0]);
 boo.textContent = boo.textContent + character[sortable[7][0]-1];
 
 boo = document.getElementById("boo2");
@@ -193,7 +179,6 @@ document.getElementById("againBtn").addEventListener("click", function(){
 });
 
 function calcEnnea_Nsum() {
-  console.log("enter!");
   var error_noData = false;
   for(var ennea = 1; ennea < 10; ennea++ ){
       sessionStorage.setItem(ennea, 0);
@@ -202,37 +187,22 @@ function calcEnnea_Nsum() {
       chapter = 1;
       session_key = chapter + "_" + ennea;
       if(sessionStorage.getItem(session_key) == null){
-          console.log("error : session storage has no data of" + session_key);
           error_noData = null;
           break;
       }
       else{
-          console.log(sessionStorage.getItem(session_key));
-          console.log(ennea);
-          console.log(sessionStorage.getItem(1 + "_" + ennea) + " + " + sessionStorage.getItem(2 + "_" + ennea) + " + " + sessionStorage.getItem(3 + "_" + ennea));
           val = Number(sessionStorage.getItem(1 + "_" + ennea)) + Number(sessionStorage.getItem(2 + "_" + ennea)) + Number(sessionStorage.getItem(3 + "_" + ennea));   
-          console.log(val);
           sessionStorage.setItem(ennea, val);
           EnneaArr[ennea-1] = val;
       }
   }
-  console.log(error_noData);
-  console.log(!error_noData);
   if(error_noData) {
     saveDB();
-    console.log("sendDB 함수 실행 완료");
-  } else {
-    console.log("sendDB 함수 실행 안함");
   }
 }
 
 function isMobile() {
-  console.log("mobile?");
-  // ipad인지 확인하고 img 및 비율 변경
-  console.log(/iPad/i.test(navigator.userAgent));
   if(/iPad/i.test(navigator.userAgent)) {
-      console.log(/iPad/i.test(navigator.userAgent));
-      console.log("mobile?");
       return "iPad";
   }
 
