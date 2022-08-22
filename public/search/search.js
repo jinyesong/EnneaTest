@@ -1,8 +1,17 @@
+let passwordCheck = false;
 while(pw = prompt("비밀번호를 입력해주세요")){
     if(pw == 'eogkrqn'){
+        console.log("password true");
+        passwordCheck = true;
         break;
     }
     alert("비밀번호가 일치하지 않습니다");
+    console.log("wrong password");
+}
+console.log(passwordCheck);
+if(passwordCheck == false) {
+    document.getElementById("tablebody").display = "none";
+    console.log("password check false");
 }
 
 const firebaseConfig = {
@@ -105,6 +114,7 @@ chapter_enneaNum = {
     2: [3, 2, 8, 2, 3, 8, 2, 3, 8, 2, 2, 5, 8, 6, 5, 6, 7, 7, 1, 9, 8, 2, 4, 8, 7, 1, 3],
     3: [4, 2, 4, 5, 1, 9, 2, 4, 7, 1, 7, 6, 5, 8, 4, 7, 5, 6, 4, 5, 8, 4, 6, 9, 4, 1, 4, 1, 9, 1, 9]
 };
+
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
