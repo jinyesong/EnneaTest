@@ -179,7 +179,8 @@ document.getElementById("againBtn").addEventListener("click", function(){
 });
 
 function calcEnnea_Nsum() {
-  var error_noData = false;
+  console.log("enter!");
+  var error_noData = true;
   for(var ennea = 1; ennea < 10; ennea++ ){
       sessionStorage.setItem(ennea, 0);
   }
@@ -187,17 +188,25 @@ function calcEnnea_Nsum() {
       chapter = 1;
       session_key = chapter + "_" + ennea;
       if(sessionStorage.getItem(session_key) == null){
+          console.log("error : session storage has no data of" + session_key);
           error_noData = null;
           break;
       }
       else{
+          console.log(sessionStorage.getItem(session_key));
+          console.log(ennea);
+          console.log(sessionStorage.getItem(1 + "_" + ennea) + " + " + sessionStorage.getItem(2 + "_" + ennea) + " + " + sessionStorage.getItem(3 + "_" + ennea));
           val = Number(sessionStorage.getItem(1 + "_" + ennea)) + Number(sessionStorage.getItem(2 + "_" + ennea)) + Number(sessionStorage.getItem(3 + "_" + ennea));   
+          console.log(val);
           sessionStorage.setItem(ennea, val);
           EnneaArr[ennea-1] = val;
       }
   }
   if(error_noData) {
     saveDB();
+    console.log("sendDB 함수 실행 완료");
+  } else {
+    console.log("sendDB 함수 실행 안함");
   }
 }
 
