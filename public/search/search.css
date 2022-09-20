@@ -47,3 +47,9 @@ label{
     height: 80%;
     width: 80%;
 }
+#searchContainer{
+    display: none;
+}
+#loginContainer{
+    padding-top: 20%;
+}

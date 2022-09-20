@@ -1,19 +1,3 @@
-let passwordCheck = false;
-while(pw = prompt("비밀번호를 입력해주세요")){
-    if(pw == 'eogkrqn'){
-        console.log("password true");
-        passwordCheck = true;
-        break;
-    }
-    alert("비밀번호가 일치하지 않습니다");
-    console.log("wrong password");
-}
-console.log(passwordCheck);
-if(passwordCheck == false) {
-    document.getElementById("tablebody").display = "none";
-    console.log("password check false");
-}
-
 const firebaseConfig = {
     apiKey: "AIzaSyAETLy6EubnWcv2NARqyEKLIfC-rRBin3w",
     authDomain: "enneatest-b7cc9.firebaseapp.com",
@@ -118,6 +102,46 @@ chapter_enneaNum = {
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+
+//로그인
+if(sessionStorage.getItem("login")){ //최근 로그인시 자동로그인
+    document.getElementById("loginContainer").style.display = "none";
+    document.getElementById("searchContainer").style.display = "block";
+}
+else{//로그인 안했을 때
+    document.getElementById("loginContainer").style.display = "block";
+    document.getElementById("searchContainer").style.display = "none";
+    //db접근
+    document.getElementById("loginBtn").addEventListener("click", function(){
+        let id = document.getElementById("id").value;
+        let pw = document.getElementById("pw").value;
+        if(id==""||pw==""){
+            alert("아이디와 비밀번호를 입력해주세요.");
+        }
+        else{
+            db.collection("Admin").doc(id).get().then((doc)=>{
+                if(pw == doc.data().PW){
+                    alert(doc.data().name + "님 로그인");
+                    document.getElementById("loginContainer").style.display = "none";
+                    document.getElementById("searchContainer").style.display = "block";
+                    sessionStorage.setItem("login", id);
+                }else{
+                    alert("아이디와 비밀번호가 일치하지 않습니다.");
+                }
+            })
+            .catch(error => {
+                alert("존재하지 않는 아이디입니다.");
+            });
+        }
+    });
+}
+
+document.getElementById("logout").addEventListener("click", function(){ //로그아웃
+    document.getElementById("loginContainer").style.display = "block";
+    document.getElementById("searchContainer").style.display = "none";
+    sessionStorage.clear();
+});
+
 makeQuestionbar();
 let getArr = new Array(); //처음에 목록을 받아와서 이후에 검색할 때 또 받아오지 않도록 저장해두는 배열
 db.collection("User").orderBy('time', 'desc').get().then((snapshot)=>{

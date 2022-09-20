@@ -10,40 +10,48 @@
     <title>조회</title>
 </head>
 <body>
-    <div id="container">
-        <label>날짜:</label> <input id="dateSearchBox" type="date">&nbsp&nbsp&nbsp
-        <label>이름:</label> <input id="nameSearchBox" type="text">&nbsp
-        <button id="searchBtn"><span class="material-icons md-18">search</span></button>
+    <div id="loginContainer">
+        <b>아이디: </b><input type="text" id="id"><br>
+        <b>비밀번호: </b><input type="password" id="pw"><br><br>
+        <button id="loginBtn"><b>로그인</b></button>
     </div>
-    <div id="popupContainer">
-        <button id="popup_all">전체보기</button>
-        <button id="popup_1">1</button>
-        <button id="popup_2">2</button>
-        <button id="popup_3">3</button>
-        <button id="popup_4">4</button>
-        <button id="popup_5">5</button>
-        <button id="popup_6">6</button>
-        <button id="popup_7">7</button>
-        <button id="popup_8">8</button>
-        <button id="popup_9">9</button>
-        <button id="popup_cancel">X</button>
+    <div id="searchContainer">
+        <div id="container">
+            <label>날짜:</label> <input id="dateSearchBox" type="date">&nbsp&nbsp&nbsp
+            <label>이름:</label> <input id="nameSearchBox" type="text">&nbsp
+            <button id="searchBtn"><span class="material-icons md-18">search</span></button>
+            <button id="logout">로그아웃</button>
+        </div>
+        <div id="popupContainer">
+            <button id="popup_all">전체보기</button>
+            <button id="popup_1">1</button>
+            <button id="popup_2">2</button>
+            <button id="popup_3">3</button>
+            <button id="popup_4">4</button>
+            <button id="popup_5">5</button>
+            <button id="popup_6">6</button>
+            <button id="popup_7">7</button>
+            <button id="popup_8">8</button>
+            <button id="popup_9">9</button>
+            <button id="popup_cancel">X</button>
+        </div>
+        <table id="enneaTable">
+            <tr>
+                <th>시간</th>
+                <th>이름</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+            </tr>
+            <tbody id="tableBody"></tbody>
+        </table>
     </div>
-    <table id="enneaTable">
-        <tr>
-            <th>시간</th>
-            <th>이름</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
-        </tr>
-        <tbody id="tableBody"></tbody>
-    </table>
 
     <script src="../__/firebase/8.6.5/firebase-app.js"></script>
     <script src="../__/firebase/8.6.5/firebase-firestore.js"></script>
